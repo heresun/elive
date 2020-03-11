@@ -7,24 +7,98 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/genetatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4fb2eb90-113e-4b0b-84ad-b43239705b60.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4fb2eb90-113e-4b0b-84ad-b43239705b60.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/AppointmentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/CollectionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/HouseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/ImgDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/JurisdictionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/TransactionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Appointment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Collection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Img.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Jurisdiction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/AppointmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/CollectionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/HouseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/ImgMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/JurisdictionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/TransactionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/AccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/IAccountDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/AccountService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/AccountServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/test/MybatisTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/test/TestSpring.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/genetatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/elive.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/controller/AccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/dao/IAccountDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/dao/IAccountDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/domain/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/service/AccountService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/service/impl/AccountServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/test/MybatisTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/test/TestSpring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatisConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/META-INF/elive.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/application-dao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/controller/AccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/dao/IAccountDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/dao/IAccountDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/domain/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/service/AccountService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/service/impl/AccountServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/test/MybatisTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/test/TestSpring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/log4j2.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mybatisConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/aspectjweaver-1.9.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/jackson-annotations-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/jackson-core-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/jackson-databind-2.10.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/jsqlparser-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/junit-4.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/log4j-api-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/log4j-core-2.12.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/mybatis-3.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/mysql-connector-java-5.1.47.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/pagehelper-5.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/slf4j-log4j12-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-aop-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-beans-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-context-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-core-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-expression-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-jcl-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-jdbc-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-test-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-tx-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-web-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/lib/spring-webmvc-5.2.1.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/pages/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +189,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -126,16 +201,17 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\java\elive\src\main\java\com\sundehui\dao" />
-      <recent name="E:\java\elive\src\main\resources\com.sundehui.dao" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java\elive\src\main\resources\com\sundehui\dao" />
       <recent name="E:\java\elive\src\main\resources" />
       <recent name="E:\java\elive\src\main\resources\com.sundehui.dao" />
       <recent name="E:\java\elive\src\main\java\com\sundehui\dao" />
       <recent name="E:\java\elive\src\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\java\elive" />
+      <recent name="E:\java\elive\src\main\java\com\sundehui\dao" />
+      <recent name="E:\java\elive\src\main\resources\com.sundehui.dao" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.forGraduation">
@@ -311,6 +387,8 @@
       <workItem from="1583224158568" duration="22338000" />
       <workItem from="1583402086459" duration="6116000" />
       <workItem from="1583926411846" duration="4518000" />
+      <workItem from="1583931321716" duration="281000" />
+      <workItem from="1583931615473" duration="1240000" />
     </task>
     <task id="LOCAL-00001" summary="添加了mybatis下划线命名到驼峰命名的转换">
       <created>1583929097802</created>
@@ -319,15 +397,39 @@
       <option name="project" value="LOCAL" />
       <updated>1583929097802</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加了user模型">
+      <created>1583931376817</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583931376817</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加了user模型">
+      <created>1583931594965</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583931594965</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加了pom文件">
+      <created>1583931921051</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583931921051</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="添加了mybatis下划线命名到驼峰命名的转换" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了mybatis下划线命名到驼峰命名的转换" />
+    <MESSAGE value="添加了user模型" />
+    <MESSAGE value="添加了pom文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了pom文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="7" key="#Inspections" timestamp="1582912787972">
@@ -351,10 +453,10 @@
     </state>
     <state x="371" y="95" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583229612020" />
     <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1583930352295" />
-    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1583929096532">
+    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1583931919990">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1583929096532" />
+    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1583931919990" />
     <state x="421" y="101" key="FileChooserDialogImpl" timestamp="1583151530505">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -379,26 +481,26 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1141" height="260" key="GridCell.Tab.-1.right/0.0.1280.689@0.0.1280.689" timestamp="1583227258846" />
-    <state width="1383" height="290" key="GridCell.Tab.0.bottom" timestamp="1583494843973">
+    <state width="1493" height="95" key="GridCell.Tab.0.bottom" timestamp="1583932232913">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1383" height="290" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583494843973" />
-    <state width="1383" height="290" key="GridCell.Tab.0.center" timestamp="1583494843973">
+    <state width="1493" height="95" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1583932232913" />
+    <state width="1493" height="95" key="GridCell.Tab.0.center" timestamp="1583932232911">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1383" height="290" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1583494843973" />
-    <state width="1383" height="290" key="GridCell.Tab.0.left" timestamp="1583494843972">
+    <state width="1493" height="95" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1583932232911" />
+    <state width="1493" height="95" key="GridCell.Tab.0.left" timestamp="1583932232910">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1383" height="290" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1583494843972" />
-    <state width="1383" height="290" key="GridCell.Tab.0.right" timestamp="1583494843973">
+    <state width="1493" height="95" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1583932232910" />
+    <state width="1493" height="95" key="GridCell.Tab.0.right" timestamp="1583932232912">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1383" height="290" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1583494843973" />
+    <state width="1493" height="95" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1583932232912" />
     <state width="1383" height="290" key="GridCell.Tab.1.bottom" timestamp="1583494843973">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -468,10 +570,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="362" y="87" width="561" height="524" key="StructurePopup/0.0.1280.689@0.0.1280.689" timestamp="1583248281314" />
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1583928886904">
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1583931930530">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1583928886904" />
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1583931930530" />
     <state x="211" y="0" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1582897102821">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
