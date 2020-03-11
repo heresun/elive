@@ -6,7 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="" />
+    <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/genetatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4fb2eb90-113e-4b0b-84ad-b43239705b60.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4fb2eb90-113e-4b0b-84ad-b43239705b60.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/dao/IAccountDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/AccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/AccountServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/test/MybatisTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/test/TestSpring.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +63,7 @@
         <item name="MySQL - graduation@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="graduation: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="account: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -56,9 +75,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -80,6 +108,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1YQXBaZ1zXGczf5e86JCwbp78Xt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -279,12 +310,24 @@
       <workItem from="1583047791206" duration="16640000" />
       <workItem from="1583224158568" duration="22338000" />
       <workItem from="1583402086459" duration="6116000" />
-      <workItem from="1583926411846" duration="615000" />
+      <workItem from="1583926411846" duration="4518000" />
     </task>
+    <task id="LOCAL-00001" summary="添加了mybatis下划线命名到驼峰命名的转换">
+      <created>1583929097802</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583929097802</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加了mybatis下划线命名到驼峰命名的转换" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了mybatis下划线命名到驼峰命名的转换" />
   </component>
   <component name="WindowStateProjectService">
     <state x="466" y="7" key="#Inspections" timestamp="1582912787972">
@@ -303,10 +346,15 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="233" y="4" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1280.689@0.0.1280.689" timestamp="1582894422786" />
-    <state x="371" y="95" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583229612020">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583930352295">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="371" y="95" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583229612020" />
+    <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1583930352295" />
+    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1583929096532">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1583929096532" />
     <state x="421" y="101" key="FileChooserDialogImpl" timestamp="1583151530505">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -420,6 +468,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="362" y="87" width="561" height="524" key="StructurePopup/0.0.1280.689@0.0.1280.689" timestamp="1583248281314" />
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1583928886904">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1583928886904" />
     <state x="211" y="0" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1582897102821">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -444,6 +496,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="55" y="267" width="1155" height="241" key="dock-window-5/0.0.1280.689@0.0.1280.689" timestamp="1583229148707" />
+    <state x="496" y="220" key="git4idea.merge.GitPullDialog" timestamp="1583928087109">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="496" y="220" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1583928087109" />
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup" timestamp="1583220246499">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
