@@ -14,6 +14,11 @@
   <sql id="Base_Column_List" >
     id, account, password, nick_name, address, phone, photo, role_id
   </sql>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select * from user;
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

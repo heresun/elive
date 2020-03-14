@@ -26,4 +26,10 @@
     <mvc:resources location="/js/" mapping="/js/**"/>
     <!--开启SpringMVC注解的支持-->
     <mvc:annotation-driven/>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <bean class="com.sundehui.interceptor.CROSAllow"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 </beans>
