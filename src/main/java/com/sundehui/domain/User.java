@@ -1,8 +1,5 @@
 package com.sundehui.domain;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class User {
     private Integer id;
 
@@ -10,15 +7,48 @@ public class User {
 
     private String password;
 
-    private String nickName;
-
-    private String address;
+    private String username;
 
     private String phone;
 
     private String photo;
 
     private Integer roleId;
+
+    private String roleName;
+
+    public User(String account, String password, String username, String phone, String photo) {
+        this.account = account;
+        this.password = password;
+        this.username = username;
+        this.phone = phone;
+        this.photo = photo;
+    }
+
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                ", phone='" + phone + '\'' +
+                ", photo='" + photo + '\'' +
+                ", roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 
     public Integer getId() {
         return id;
@@ -44,20 +74,12 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
     public String getPhone() {

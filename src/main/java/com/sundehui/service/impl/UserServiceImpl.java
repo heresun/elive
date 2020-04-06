@@ -1,6 +1,6 @@
 package com.sundehui.service.impl;
 
-import com.sundehui.dao.UserDao;
+import com.sundehui.mapper.UserMapper;
 import com.sundehui.domain.User;
 import com.sundehui.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,15 +8,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    private UserDao dao;
+    private UserMapper mapper;
+
+
 
 
     @Override
     public List<User> findAll() {
-        List<User> all = dao.findAll();
+        List<User> all = mapper.findAll();
         return all;
     }
 
@@ -32,12 +34,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int insertSelective(User record) {
-        return 0;
+        int i = mapper.insertSelective(record);
+        return i;
     }
 
     @Override
     public User selectByPrimaryKey(Integer id) {
-        User user = dao.selectByPrimaryKey(id);
+        User user = mapper.selectByPrimaryKey(id);
+        return user;
+    }
+
+    @Override
+    public User selectByAccount(String account) {
+        User user = mapper.selectByAccount(account);
         return user;
     }
 

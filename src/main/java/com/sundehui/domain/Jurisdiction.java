@@ -1,8 +1,5 @@
 package com.sundehui.domain;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Jurisdiction {
     private Integer id;
 

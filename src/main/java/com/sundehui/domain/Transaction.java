@@ -1,10 +1,7 @@
 package com.sundehui.domain;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Date;
 
-@Component
 public class Transaction {
     private Integer id;
 

@@ -1,8 +1,5 @@
 package com.sundehui.domain;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Collection {
     private Integer id;
 
@@ -32,5 +29,14 @@ public class Collection {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "Collection{" +
+                "id=" + id +
+                ", houseId=" + houseId +
+                ", userId=" + userId +
+                '}';
     }
 }
