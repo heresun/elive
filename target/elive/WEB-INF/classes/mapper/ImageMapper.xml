@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sundehui.mapper.ImageMapper" >
+  <resultMap id="BaseResultMap" type="com.sundehui.domain.Image" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uri" property="uri" jdbcType="VARCHAR" />
+    <result column="house_number" property="houseNumber" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uri, house_number
+  </sql>
+
+<!--  通过房源编号删除其对应的所有图片-->
+  <delete id="deleteByHouseNumber" parameterType="java.lang.String">
+    delete from image where house_number = #{houseNumber}
+  </delete>
+<!--  根据房源编号和图片名获取该图片对应的真实路径-->
+  <select id="getImgRealPath" parameterType="java.lang.String" resultType="java.lang.String">
+    select uri from image where house_number = #{houseNumber} and uri like #{imgName};
+  </select>
+
+<!--  通过房源编号和图片名称删除一张图片-->
+  <delete id="deleteOne" parameterType="java.lang.String">
+    delete from image where house_number = #{houseNumber} and uri like #{imgName}
+  </delete>
+
+<!--  通过房源编号获取该房源的所有图片信息-->
+  <select id="selectByHouseNumber" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from image where house_number=#{houseNumber}
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from image
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from image
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sundehui.domain.Image" >
+    insert into image (id, uri, house_number
+      )
+    values (#{id,jdbcType=INTEGER}, #{uri,jdbcType=VARCHAR}, #{houseNumber,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sundehui.domain.Image" >
+    insert into image
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uri != null" >
+        uri,
+      </if>
+      <if test="houseNumber != null" >
+        house_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uri != null" >
+        #{uri,jdbcType=VARCHAR},
+      </if>
+      <if test="houseNumber != null" >
+        #{houseNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sundehui.domain.Image" >
+    update image
+    <set >
+      <if test="uri != null" >
+        uri = #{uri,jdbcType=VARCHAR},
+      </if>
+      <if test="houseNumber != null" >
+        house_number = #{houseNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sundehui.domain.Image" >
+    update image
+    set uri = #{uri,jdbcType=VARCHAR},
+      house_number = #{houseNumber,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
