@@ -54,7 +54,7 @@
     <!--2.2配置事务切入-->
     <aop:config>
         <aop:pointcut id="txPointCut"
-                      expression="execution(* com.sundehui.mapper.*.*(..))"/>
+                      expression="execution(* com.sundehui.controller.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
     </aop:config>
     <!--事务管理器注解驱动，先不用-->
