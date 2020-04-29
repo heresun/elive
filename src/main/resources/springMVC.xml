@@ -20,10 +20,20 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--允许多文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
     <!--过滤静态资源-->
     <mvc:resources location="/css/" mapping="/css/**"/>
     <mvc:resources location="/images/" mapping="/images/**"/>
     <mvc:resources location="/js/" mapping="/js/**"/>
+    <mvc:resources location="/upload/" mapping="/upload/**"/>
     <!--开启SpringMVC注解的支持-->
     <mvc:annotation-driven/>
+        <mvc:interceptors>
+            <mvc:interceptor>
+                <mvc:mapping path="/**"/>
+                <bean class="com.sundehui.interceptor.CROSAllow"/>
+            </mvc:interceptor>
+        </mvc:interceptors>
 </beans>

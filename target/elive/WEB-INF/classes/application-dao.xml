@@ -22,16 +22,18 @@
         <property name="jdbcUrl" value="${jdbc.url}"/>
         <property name="user" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
+        <property name="autoCommitOnClose" value="true"/>
     </bean>
+
     <!--2，配置SqlSessionFactory工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath:com/sundehui/dao/*Dao.xml"/>
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
         <property name="configLocation" value="classpath:mybatisConfig.xml"/>
     </bean>
     <!--3, 扫描dao接口所在的包,为其创建代理对象-->
     <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.sundehui.dao"/>
+        <property name="basePackage" value="com.sundehui.mapper"/>
 <!--        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>-->
     </bean>
 <!--======================================================生命式事务的配置=================================================================-->
@@ -52,10 +54,10 @@
     <!--2.2配置事务切入-->
     <aop:config>
         <aop:pointcut id="txPointCut"
-                      expression="execution(* com.sundehui.dao.*.*(..))"/>
+                      expression="execution(* com.sundehui.mapper.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
     </aop:config>
     <!--事务管理器注解驱动，先不用-->
-<!--    <tx:annotation-driven transaction-manager="txManager"/>-->
+    <tx:annotation-driven transaction-manager="txManager"/>
 
 </beans>
