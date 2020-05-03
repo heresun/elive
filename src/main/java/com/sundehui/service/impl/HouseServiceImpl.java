@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -125,6 +126,14 @@ public class HouseServiceImpl implements HouseService {
 
     @Override
     public List<House> getHousePage(FilterParams param) {
+
+        // 将address改为模糊查询参数
+        String address = param.getAddress();
+        if (address != null && address.length() > 0) {
+            String addressLikeStr = String.format("%s%s%s", "%", address, "%");
+            param.setAddress(addressLikeStr);
+        }
+
         Integer paramPage = param.getPage();
         Integer paramCount = param.getCount();
         if (paramPage != null && paramCount != null) {
@@ -224,5 +233,28 @@ public class HouseServiceImpl implements HouseService {
     public Integer markHouseSold(String houseNumber) {
         Integer i = mapper.markHouseSold(houseNumber);
         return i;
+    }
+
+    @Override
+    public Integer getCountForManage(int type, int examineType, Date today) {
+
+        Integer resCount = mapper.getCountForManage(type, examineType, today);
+
+        return resCount;
+    }
+
+    @Override
+    public List<House> getUnchecked(int page, int count) {
+
+        int from = (page - 1) * count;
+
+        List<House> houses = mapper.getUnchecked(from, count);
+        return null;
+    }
+
+    @Override
+    public int passCheck(int hId, int examineType) {
+        int res = mapper.passCheck(hId, examineType);
+        return res;
     }
 }

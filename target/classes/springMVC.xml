@@ -30,10 +30,32 @@
     <mvc:resources location="/upload/" mapping="/upload/**"/>
     <!--开启SpringMVC注解的支持-->
     <mvc:annotation-driven/>
-        <mvc:interceptors>
-            <mvc:interceptor>
-                <mvc:mapping path="/**"/>
-                <bean class="com.sundehui.interceptor.CROSAllow"/>
-            </mvc:interceptor>
-        </mvc:interceptors>
+    <!--拦截器-->
+    <mvc:interceptors>
+        <!--跨域请求拦截-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.sundehui.interceptor.CROSAllow"/>
+        </mvc:interceptor>
+        <!--资源访问拦截-->
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <mvc:mapping path="/collection/**"/>
+            <mvc:mapping path="/transaction/**"/>
+            <mvc:mapping path="/house/**"/>
+            <mvc:exclude-mapping path="/collection/getCount.do"/>
+            <mvc:exclude-mapping path="/user/getOne.do"/>
+            <mvc:exclude-mapping path="/house/getOne.do"/>
+            <mvc:exclude-mapping path="/house/housePage.do"/>
+            <mvc:exclude-mapping path="/house/houseCount.do"/>
+            <mvc:exclude-mapping path="/user/login.do"/>
+            <mvc:exclude-mapping path="/user/sign.do"/>
+            <bean class="com.sundehui.interceptor.ResourceInterceptor"></bean>
+        </mvc:interceptor>
+        <!--管理元资源拦截-->
+        <mvc:interceptor>
+            <mvc:mapping path="/manage/**"/>
+            <bean class="com.sundehui.interceptor.ManageResourceInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

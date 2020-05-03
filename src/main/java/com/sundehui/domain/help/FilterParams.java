@@ -5,6 +5,10 @@ import com.sundehui.domain.HeatingType;
 import java.util.Arrays;
 
 public class FilterParams {
+
+    // 地址模糊查询
+    private String address;
+
     private Integer page;
     private Integer count;
     private Integer type;
@@ -295,10 +299,20 @@ public class FilterParams {
         this.flag = flag;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
     @Override
     public String toString() {
         return "FilterParams{" +
-                "page=" + page +
+                "address='" + address + '\'' +
+                ", page=" + page +
                 ", count=" + count +
                 ", type=" + type +
                 ", heatingType=" + heatingType +

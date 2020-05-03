@@ -46,8 +46,9 @@ public class LoginSignController {
         HttpSession session = request.getSession(false);
         if (session!=null){
             session.removeAttribute(Constants.USER_SESSION);
+            return "ok";
         }
-        return "ok";
+        return "err";
     }
 
     @PostMapping("/sign")

@@ -6,45 +6,50 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="完成了大部分功能">
+    <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageContractController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageHouseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/HouseProve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/InterceptorMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/UserProve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/interceptor/ManageResourceInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/interceptor/ResourceInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseProveMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserProveMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseProveMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserProveMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/elive.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/controller/AccountController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/dao/IAccountDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/dao/IAccountDao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/domain/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/service/AccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/service/impl/AccountServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/test/MybatisTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sundehui/test/TestSpring.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/controller/AccountController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/dao/IAccountDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/dao/IAccountDao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/domain/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/service/AccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/service/impl/AccountServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/test/MybatisTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/com/sundehui/test/TestSpring.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/0a40af3b-729d-4fec-995d-22d2d28319a0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/14d5a765-6e3f-47f7-b6fe-149fa01fc76f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/16f9bb9e-6d70-4409-87a7-8a5350df9da7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/1d91f3f9-429d-4919-a352-56f1292c2f57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/2a24d5d4-ee1e-42d1-9c4b-9758d8469807.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/397b4cc2-d2ab-4397-b0ec-d3f3d00080b1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/3c80c991-b1b1-4bef-a930-2e6ef7a1e39b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/4c271250-6cca-4fb4-a242-d1e84cfe68dc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/643e81a3-324a-4ffb-9e00-e9fe603347e6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/86317175-082b-495d-a21d-d3a1f334697d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/929acecf-35fc-4edd-9324-20d11e071e62.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/a26fc5d2-88c2-4e15-a350-709172449516.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/b0033f7b-18b6-4a30-9665-e434466b6e45.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/bff0c05d-9b13-4296-88a8-d0734a7f9a26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/c68a3505-13a6-4583-a521-7037d213b70f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/c69312df-75e1-4c37-986e-056eb9703608.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/cbd32177-c3ca-45ab-84b6-8b63bee39e87.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/d286e996-351e-42d2-ba31-839ce9605cfd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/e0e1543a-6cbf-4eee-b28a-27d2a0e16276.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/e4691fad-7df9-4254-bea5-e4abeeb2c67e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/DistrictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginSignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginSignController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/house/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/house/HouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/UtilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/UtilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/ElectricType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/ElectricType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/help/FilterParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/help/FilterParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/interceptor/CROSAllow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/interceptor/CROSAllow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/TransactionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/CollectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/CollectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/test/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/test/MyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TransactionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TransactionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/HouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/HouseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +159,38 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.forGraduation">
+    <configuration name="MyTest.hosueMangeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elive" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundehui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sundehui.test" />
+      <option name="MAIN_CLASS_NAME" value="com.sundehui.test.MyTest" />
+      <option name="METHOD_NAME" value="hosueMangeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.stringFormat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elive" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundehui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sundehui.test" />
+      <option name="MAIN_CLASS_NAME" value="com.sundehui.test.MyTest" />
+      <option name="METHOD_NAME" value="stringFormat" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyTest.teeee" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elive" />
       <extension name="coverage">
@@ -181,38 +218,6 @@
       <option name="PACKAGE_NAME" value="com.sundehui.test" />
       <option name="MAIN_CLASS_NAME" value="com.sundehui.test.MyTest" />
       <option name="METHOD_NAME" value="testDeleteOneImg" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest.testPublished" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elive" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sundehui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sundehui.test" />
-      <option name="MAIN_CLASS_NAME" value="com.sundehui.test.MyTest" />
-      <option name="METHOD_NAME" value="testPublished" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest.testSingleLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elive" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sundehui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.sundehui.test" />
-      <option name="MAIN_CLASS_NAME" value="com.sundehui.test.MyTest" />
-      <option name="METHOD_NAME" value="testSingleLocation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -308,20 +313,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MyTest.testPublished" />
-      <item itemvalue="JUnit.MyTest.testSingleLocation" />
       <item itemvalue="JUnit.MyTest.testDeleteOneImg" />
       <item itemvalue="JUnit.MyTest.teeee" />
       <item itemvalue="JUnit.MyTest.testTrnasaction" />
+      <item itemvalue="JUnit.MyTest.stringFormat" />
+      <item itemvalue="JUnit.MyTest.hosueMangeTest" />
       <item itemvalue="Tomcat Server.forGraduation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyTest.hosueMangeTest" />
+        <item itemvalue="JUnit.MyTest.stringFormat" />
         <item itemvalue="JUnit.MyTest.testTrnasaction" />
         <item itemvalue="JUnit.MyTest.testDeleteOneImg" />
         <item itemvalue="JUnit.MyTest.teeee" />
-        <item itemvalue="JUnit.MyTest.testSingleLocation" />
-        <item itemvalue="JUnit.MyTest.testPublished" />
       </list>
     </recent_temporary>
   </component>
@@ -340,11 +345,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -388,6 +388,8 @@
       <workItem from="1586651904278" duration="50944000" />
       <workItem from="1587045272413" duration="104107000" />
       <workItem from="1587926269458" duration="49362000" />
+      <workItem from="1588414731850" duration="12057000" />
+      <workItem from="1588513353894" duration="2565000" />
     </task>
     <task id="LOCAL-00001" summary="添加了mybatis下划线命名到驼峰命名的转换">
       <created>1583929097802</created>
@@ -452,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588184501959</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="完成了大部分功能">
+      <created>1588186345395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588186345395</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,9 +474,14 @@
     <MESSAGE value="添加了pom文件" />
     <MESSAGE value="建模完成" />
     <MESSAGE value="一次保存" />
-    <option name="LAST_COMMIT_MESSAGE" value="一次保存" />
+    <MESSAGE value="完成了大部分功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了大部分功能" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="79" key="#Console" timestamp="1588478117075">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="79" key="#Console/0.0.1536.834@0.0.1536.834" timestamp="1588478117075" />
     <state x="559" y="8" key="#Inspections" timestamp="1584405543968">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -477,11 +491,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1584268015538" />
-    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586773067143">
+    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588319666807">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1582978818135" />
-    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1586773067143" />
+    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1588319666807" />
     <state x="396" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584395332527">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -490,11 +504,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="526" y="290" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.834@0.0.1536.834" timestamp="1584117321013" />
-    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser" timestamp="1588181408331">
+    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser" timestamp="1588499286069">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="765" y="33" key="#com.intellij.ide.util.MemberChooser/0.0.1280.689@0.0.1280.689" timestamp="1583226529438" />
-    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1588181408331" />
+    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1588499286069" />
     <state x="233" y="4" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1582894422786">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -512,10 +526,14 @@
     </state>
     <state x="371" y="95" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583229612020" />
     <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1583930352295" />
-    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1588184498849">
+    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1588186342758">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588184498849" />
+    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588186342758" />
+    <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1588516838422">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1588516838422" />
     <state x="505" y="122" key="FileChooserDialogImpl" timestamp="1584468437273">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -541,66 +559,66 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1141" height="260" key="GridCell.Tab.-1.right/0.0.1280.689@0.0.1280.689" timestamp="1583227258846" />
-    <state width="1180" height="339" key="GridCell.Tab.0.bottom" timestamp="1588185903573">
+    <state width="1180" height="2" key="GridCell.Tab.0.bottom" timestamp="1588517553534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588185903573" />
-    <state width="1180" height="339" key="GridCell.Tab.0.center" timestamp="1588185903572">
+    <state width="1180" height="2" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588517553534" />
+    <state width="1180" height="2" key="GridCell.Tab.0.center" timestamp="1588517553534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588185903572" />
-    <state width="1180" height="339" key="GridCell.Tab.0.left" timestamp="1588185903572">
+    <state width="1180" height="2" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588517553534" />
+    <state width="1180" height="2" key="GridCell.Tab.0.left" timestamp="1588517553533">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588185903572" />
-    <state width="1180" height="339" key="GridCell.Tab.0.right" timestamp="1588185903572">
+    <state width="1180" height="2" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588517553533" />
+    <state width="1180" height="2" key="GridCell.Tab.0.right" timestamp="1588517553534">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588185903572" />
-    <state width="1180" height="339" key="GridCell.Tab.1.bottom" timestamp="1588185903328">
+    <state width="1180" height="2" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588517553534" />
+    <state width="1180" height="2" key="GridCell.Tab.1.bottom" timestamp="1588517553350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="339" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588185903328" />
-    <state width="1180" height="339" key="GridCell.Tab.1.center" timestamp="1588185903328">
+    <state width="1180" height="2" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588517553350" />
+    <state width="1180" height="2" key="GridCell.Tab.1.center" timestamp="1588517553349">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="339" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588185903328" />
-    <state width="1180" height="339" key="GridCell.Tab.1.left" timestamp="1588185903328">
+    <state width="1180" height="2" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588517553349" />
+    <state width="1180" height="2" key="GridCell.Tab.1.left" timestamp="1588517553349">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="339" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588185903328" />
-    <state width="1180" height="339" key="GridCell.Tab.1.right" timestamp="1588185903328">
+    <state width="1180" height="2" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588517553349" />
+    <state width="1180" height="2" key="GridCell.Tab.1.right" timestamp="1588517553350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="339" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588185903328" />
-    <state width="1180" height="339" key="GridCell.Tab.2.bottom" timestamp="1588185903329">
+    <state width="1180" height="2" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588517553350" />
+    <state width="1180" height="2" key="GridCell.Tab.2.bottom" timestamp="1588517553350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588185903329" />
-    <state width="1180" height="339" key="GridCell.Tab.2.center" timestamp="1588185903329">
+    <state width="1180" height="2" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588517553350" />
+    <state width="1180" height="2" key="GridCell.Tab.2.center" timestamp="1588517553350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588185903329" />
-    <state width="1180" height="339" key="GridCell.Tab.2.left" timestamp="1588185903328">
+    <state width="1180" height="2" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588517553350" />
+    <state width="1180" height="2" key="GridCell.Tab.2.left" timestamp="1588517553350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588185903328" />
-    <state width="1180" height="339" key="GridCell.Tab.2.right" timestamp="1588185903329">
+    <state width="1180" height="2" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588517553350" />
+    <state width="1180" height="2" key="GridCell.Tab.2.right" timestamp="1588517553350">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="339" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588185903329" />
+    <state width="1180" height="2" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588517553350" />
     <state width="1177" height="185" key="GridCell.Tab.3.bottom" timestamp="1588064175770">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -634,14 +652,14 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="362" y="87" width="561" height="524" key="StructurePopup/0.0.1280.689@0.0.1280.689" timestamp="1583248281314" />
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1588184522762">
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1588186360102">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588184522762" />
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588184470023">
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588186360102" />
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588517100765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1588184470023" />
+    <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1588517100765" />
     <state x="211" y="0" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1582897102821">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -674,11 +692,15 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="496" y="220" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1588184512579" />
-    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup" timestamp="1587526264589">
+    <state x="511" y="50" key="refactoring.ChangeSignatureDialog" timestamp="1588516525056">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="511" y="50" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1588516525056" />
+    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup" timestamp="1588499248883">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583220246499" />
-    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1587526264589" />
+    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1588499248883" />
     <state x="321" y="29" key="spring file set editor" timestamp="1583123648041">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

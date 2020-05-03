@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.lang.invoke.ConstantCallSite;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +17,8 @@ public class CROSAllow implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String[] allowDomains = {
               "http://localhost:800",
-                "*"
+              "http://localhost:8000",
+
         };
         Set allowOrigins = new HashSet(Arrays.asList(allowDomains));
         String originHeaders = request.getHeader("Origin");

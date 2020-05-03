@@ -13,18 +13,14 @@ import com.sundehui.service.ImageService;
 import com.sundehui.service.TransactionService;
 import com.sundehui.service.UserService;
 import com.sundehui.util.Constants;
-import com.sundehui.util.HouseType;
 import com.sundehui.util.ImgUtil;
 import com.sundehui.util.Utils;
-import jdk.nashorn.internal.ir.CallNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import sun.net.www.HeaderParser;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.nio.charset.CodingErrorAction;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -162,7 +158,7 @@ public class HouseController {
     }
 
 
-    //     获取现有的租房数量
+    //     获取现有的房屋数量
     @GetMapping("/houseCount")
     public Integer getHouseCount(HttpServletRequest request) {
 
@@ -259,7 +255,7 @@ public class HouseController {
         return 0;
     }
 
-    // 通过房屋编号将一个房源标记为已售出
+    // 通过房屋编号将一个房源标记为已售出,并将其插入交易表
     @GetMapping("/saleOne")
     @Transactional
     public int saleOne (HttpServletRequest request){

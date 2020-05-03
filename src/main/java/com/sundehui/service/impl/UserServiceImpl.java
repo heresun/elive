@@ -3,6 +3,7 @@ package com.sundehui.service.impl;
 import com.sundehui.mapper.UserMapper;
 import com.sundehui.domain.User;
 import com.sundehui.service.UserService;
+import org.mybatis.generator.codegen.ibatis2.sqlmap.elements.InsertElementGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,11 @@ public class UserServiceImpl implements UserService {
     private UserMapper mapper;
 
 
-
-
     @Override
-    public List<User> findAll() {
-        List<User> all = mapper.findAll();
+    public List<User> findAll(Integer page, Integer count) {
+        Integer from = (page - 1) * count;
+
+        List<User> all = mapper.findAll(from, count);
         return all;
     }
 
@@ -70,5 +71,27 @@ public class UserServiceImpl implements UserService {
     public Integer getUidByAccount(String buyerAccount) {
         Integer uId = mapper.getUidByAccount(buyerAccount);
         return uId;
+    }
+
+    @Override
+    public List<User> findLikeByAccount(String account, Integer page, Integer count) {
+        String accountLike = "%" + account + "%";
+        Integer from = (page - 1) * count;
+
+        List<User> users = mapper.findLikeByAccount(accountLike, from, count);
+        return users;
+    }
+
+    @Override
+    public Integer getUserCount(Integer i) {
+        Integer resCount = mapper.getUserCount(i);
+        return resCount;
+    }
+
+    @Override
+    public int passCheck(int uId,int examineType) {
+
+        int res = mapper.passCheck(uId,examineType);
+        return res;
     }
 }

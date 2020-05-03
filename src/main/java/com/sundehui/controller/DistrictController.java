@@ -20,6 +20,7 @@ public class DistrictController {
     @Autowired
     private DistrictService service;
 
+    // 根据pId获取省集合、市集合、地区集合
     @GetMapping(value = "/location", produces = "text/html;charset=UTF-8")
     public String selectByAreaId(HttpServletRequest request) {
         // 获取参数id
@@ -46,6 +47,7 @@ public class DistrictController {
         return string;
     }
 
+    // 获取“省/市/地区”字符串
     @GetMapping(value = "/singleLocation", produces = "text/html;charset=UTF-8")
     public String getById(HttpServletRequest request) {
         // 获取参数id

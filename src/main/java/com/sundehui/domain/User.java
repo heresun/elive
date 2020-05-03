@@ -17,6 +17,16 @@ public class User {
 
     private String roleName;
 
+    private Integer examineType;
+
+    public Integer getExamineType() {
+        return examineType;
+    }
+
+    public void setExamineType(Integer examineType) {
+        this.examineType = examineType;
+    }
+
     public User(String account, String password, String username, String phone, String photo) {
         this.account = account;
         this.password = password;
@@ -26,20 +36,6 @@ public class User {
     }
 
     public User() {
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", account='" + account + '\'' +
-                ", password='" + password + '\'' +
-                ", username='" + username + '\'' +
-                ", phone='" + phone + '\'' +
-                ", photo='" + photo + '\'' +
-                ", roleId=" + roleId +
-                ", roleName='" + roleName + '\'' +
-                '}';
     }
 
     public String getRoleName() {
@@ -104,5 +100,20 @@ public class User {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                ", phone='" + phone + '\'' +
+                ", photo='" + photo + '\'' +
+                ", roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                ", examineType=" + examineType +
+                '}';
     }
 }

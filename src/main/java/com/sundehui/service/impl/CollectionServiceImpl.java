@@ -17,8 +17,6 @@ public class CollectionServiceImpl implements CollectionService {
     //通过用户id获取该用户所有收藏的房屋
     @Autowired
     private CollectionMapper mapper;
-    @Autowired
-    private UserMapper userMapper;
 
     @Override
     public List<House> getAllCollection(String account) {

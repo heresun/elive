@@ -4,6 +4,7 @@ import com.sundehui.domain.House;
 import com.sundehui.domain.help.FilterParams;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -40,4 +41,10 @@ public interface HouseService {
 
     // 通过房屋编号将一个房屋标记为已售出
     Integer markHouseSold(String houseNumber);
+
+    Integer getCountForManage(int type, int examineType, Date today);
+
+    List<House> getUnchecked(int page, int count);
+
+    int passCheck(int hId,int examineType);
 }

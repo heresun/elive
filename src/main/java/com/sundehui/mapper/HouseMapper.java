@@ -4,6 +4,7 @@ import com.sundehui.domain.House;
 import com.sundehui.domain.help.FilterParams;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -45,4 +46,10 @@ public interface HouseMapper {
 
     // 通过房屋编号将一个房屋标记为已售出
     Integer markHouseSold(@Param("houseNumber") String houseNumber);
+
+    Integer getCountForManage(@Param("type") int type,@Param("examineType") int examineType, @Param("today") Date today);
+
+    List<House> getUnchecked(@Param("from") int from,@Param("count") int count);
+
+    int passCheck(@Param("id") int hId, @Param("examineType") int examineType);
 }

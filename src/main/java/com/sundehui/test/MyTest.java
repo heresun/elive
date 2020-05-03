@@ -10,9 +10,11 @@ import com.sundehui.domain.help.TransactionHelper;
 import com.sundehui.service.*;
 import com.sundehui.util.Utils;
 import org.apache.ibatis.type.BlobInputStreamTypeHandler;
+import org.apache.logging.log4j.core.util.JsonUtils;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -240,5 +242,28 @@ public class MyTest {
 
         Integer integer = service.getUidByAccount("16650634286");
         System.out.println(integer);
+    }
+
+    @Test
+    public void stringFormat () {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService service = context.getBean(UserService.class);
+
+        Integer userCount = service.getUserCount(0);
+        Integer userCount1 = service.getUserCount(1);
+        Integer userCount2 = service.getUserCount(2);
+        System.out.println(userCount);
+        System.out.println(userCount1);
+        System.out.println(userCount2);
+    }
+
+
+    @Test
+    public void hosueMangeTest () {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HouseService service = context.getBean(HouseService.class);
+
+        Integer countForManage = service.getCountForManage(0, 1, null);
+        System.out.println(countForManage);
     }
 }

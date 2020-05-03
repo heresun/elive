@@ -18,12 +18,6 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    // 1.后台管理Api
-    @GetMapping("/findAll")
-    public List<User> findAllUser(){
-
-        return null;
-    }
 
     @GetMapping("/getOne")
     public List<User> findOne(HttpServletRequest request){
@@ -31,6 +25,9 @@ public class UserController {
         String ownerId = request.getParameter("ownerId");
         int id = Integer.parseInt(ownerId);
         User user = service.selectByPrimaryKey(id);
+        user.setRoleName("");
+        user.setRoleId(null);
+        user.setId(null);
         users.add(user);
         return users;
     }

@@ -19,8 +19,5 @@ public interface TransactionMapper {
 
     int updateByPrimaryKey(Transaction record);
 
-
-    // 通过type的不同，查询该用户的交易信息，
-    // 如果type==0，则作为卖家，如果type==1,则作为买家
-    List<TransactionHelper> getTransaction(@Param("uId") Integer uId, @Param("type") Integer type);
+    List<TransactionHelper> getTransaction(@Param("uId") Integer uId,@Param("type") Integer type);
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserService {
 
     //获取所有用户
-    List<User> findAll();
+    List<User> findAll(Integer page, Integer count);
 
     //通过主键删除用户
     int deleteByPrimaryKey(Integer id);
@@ -32,4 +32,10 @@ public interface UserService {
     Integer checkAccount(String account);
 
     Integer getUidByAccount(String buyerAccount);
+
+    List<User> findLikeByAccount(String account, Integer page, Integer count);
+
+    Integer getUserCount(Integer i);
+
+    int passCheck(int uId,int examineType);
 }

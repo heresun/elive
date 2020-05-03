@@ -37,6 +37,27 @@
     orientation, water_type, natural_gas, parking_lot, heating_type, house_number, renovation_type
   </sql>
 
+    <update id="passCheck" parameterType="java.lang.Integer">
+        update house set examine_type = #{examineType} where id = #{id}
+    </update>
+
+    <select id="getUnchecked" resultMap="BaseResultMap">
+        select * from house where examine_type = 1
+        limit #{from}, #{count}
+    </select>
+
+    <select id="getCountForManage" resultType="java.lang.Integer">
+
+        select count(h.id) from house h
+        left join `transaction` t on h.house_number = t.house_number
+        WHERE h.type = #{type} and h.examine_type = #{examineType}
+        <if test="today !=null">
+            and To_DAYS(t.date) = TO_DAYS(#{today})
+            and t.id is not null
+        </if>
+
+    </select>
+
 
     <!--  获取分页-->
     <!--  <select id="getHousePage" resultMap="BaseResultMap">-->
@@ -62,6 +83,10 @@
     </select>
     <select id="getHousePage" resultMap="BaseResultMap" parameterType="com.sundehui.domain.help.FilterParams">
         select * from house where
+        <!--这里是搜索框的模糊查询-->
+        <if test="params.address!=null and params.address.length() > 0 ">
+            address like #{params.address} and
+        </if>
         <!-- 按照新旧房屋的类型筛选  -->
         <if test="params.type!=null">
             `type`=#{params.type}
@@ -312,6 +337,10 @@
         <!--        </if>-->
         <!--        and examine_type=2;-->
         select count(*) from house where
+        <!--这里是搜索框的模糊查询-->
+        <if test="params.address!=null and params.address.length() > 0 ">
+            address like #{params.address} and
+        </if>
         <!-- 按照新旧房屋的类型筛选  -->
         <if test="params.type!=null">
             `type`=#{params.type}

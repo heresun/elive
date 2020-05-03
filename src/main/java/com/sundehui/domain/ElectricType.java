@@ -1,5 +1,7 @@
 package com.sundehui.domain;
 
+import org.springframework.stereotype.Component;
+
 public class ElectricType {
     private Integer id;
 
