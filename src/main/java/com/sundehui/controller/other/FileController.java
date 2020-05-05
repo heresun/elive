@@ -41,7 +41,6 @@ public class FileController {
         HttpSession session = request.getSession();
         session.setAttribute(Constants.FILE_NAMES,fileNames);
 
-
         return "ok";
     }
 }

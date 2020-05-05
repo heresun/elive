@@ -2,6 +2,7 @@ package com.sundehui.domain;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class House {
     private Integer id;
@@ -58,8 +59,17 @@ public class House {
 
     private Integer renovationType;
 
+    // 这里仅仅针对待审核的房屋，已经处理的为1，还未处理过的为0
+    private Integer status;
 
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     // 辅助字段
     private String url;
@@ -70,6 +80,35 @@ public class House {
     private String renovation;
     private String owner;
     private Integer cId;
+    private String phone;
+    private String district;
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public List<String> getProveUrls() {
+        return proveUrls;
+    }
+
+    public void setProveUrls(List<String> proveUrls) {
+        this.proveUrls = proveUrls;
+    }
+
+    private List<String> proveUrls;
 
     public Integer getcId() {
         return cId;

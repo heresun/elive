@@ -1,5 +1,6 @@
 package com.sundehui.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.sundehui.domain.Transaction;
 import com.sundehui.domain.User;
 import com.sundehui.domain.help.TransactionHelper;
@@ -34,7 +35,19 @@ public class TransactionController {
         List<TransactionHelper> transaction = service.getTransaction(uId, type);
 
         return transaction;
+    }
 
+    @GetMapping(value = "/getTransactionForManage",produces = "text/html;charset=UTF-8")
+    public String getTransactionByHouseNumber (HttpServletRequest request){
+        String houseNumber = request.getParameter("houseNumber");
+        if (houseNumber == null){
+            return "err";
+        }
+
+        TransactionHelper transaction = service.getTransaction(houseNumber);
+        String string = JSON.toJSONString(transaction);
+
+        return string;
 
     }
 }

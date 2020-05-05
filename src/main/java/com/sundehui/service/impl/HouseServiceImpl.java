@@ -42,6 +42,7 @@ public class HouseServiceImpl implements HouseService {
     private ImageMapper imageMapper;
 
 
+
     @Override
     public int deleteByPrimaryKey(Integer id) {
         int i = mapper.deleteByPrimaryKey(id);
@@ -236,9 +237,11 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
-    public Integer getCountForManage(int type, int examineType, Date today) {
+    public Integer getCountForManage(Integer type, Integer examineType, Date today,
+                                     Integer provinceId,Integer cityId, Integer areaId, String address) {
 
-        Integer resCount = mapper.getCountForManage(type, examineType, today);
+        String addressLike = address==null?null: "%"+address+"%";
+        Integer resCount = mapper.getCountForManage(type, examineType, today, provinceId, cityId, areaId, addressLike);
 
         return resCount;
     }
@@ -253,8 +256,40 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
-    public int passCheck(int hId, int examineType) {
+    public int passCheck(Integer hId, Integer examineType) {
         int res = mapper.passCheck(hId, examineType);
         return res;
+    }
+
+    @Override
+    public List<House> getHousePageForManage(Integer page, Integer count, Integer examineType, Integer provinceId, Integer cityId, Integer areaId, String address) {
+        int from = (page-1)*count;
+
+        String addressLike = address==null?null: "%"+address+"%";
+        List<House> houses = mapper.getHousePageForManage(from,count,examineType,provinceId,cityId,areaId,addressLike);
+
+        return houses;
+
+
+
+    }
+
+    @Override
+    public int changeStatus(String houseNumber) {
+        int i = mapper.changeStatus(houseNumber);
+        return i;
+    }
+
+    @Override
+    public int changeStatus(Integer id) {
+        int i = mapper.changeStatusById(id);
+        return i;
+    }
+
+    @Override
+    public int changeExamineTypeByOwnerId(Integer uId) {
+        int resCount = mapper.changeExamineTypeByOwnerId(uId);
+
+        return resCount;
     }
 }

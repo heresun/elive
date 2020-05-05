@@ -249,12 +249,7 @@ public class MyTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService service = context.getBean(UserService.class);
 
-        Integer userCount = service.getUserCount(0);
-        Integer userCount1 = service.getUserCount(1);
-        Integer userCount2 = service.getUserCount(2);
-        System.out.println(userCount);
-        System.out.println(userCount1);
-        System.out.println(userCount2);
+
     }
 
 
@@ -263,7 +258,9 @@ public class MyTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         HouseService service = context.getBean(HouseService.class);
 
-        Integer countForManage = service.getCountForManage(0, 1, null);
-        System.out.println(countForManage);
+       int count = service.getCountForManage(null, 1, null, null, null, null, null);
+//        housePageForManage.forEach(System.out::println);
+        System.out.println(count);
     }
+
 }

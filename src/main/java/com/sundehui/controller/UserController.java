@@ -25,7 +25,8 @@ public class UserController {
         String ownerId = request.getParameter("ownerId");
         int id = Integer.parseInt(ownerId);
         User user = service.selectByPrimaryKey(id);
-        user.setRoleName("");
+        user.setRoleName(null);
+        user.setPassword(null);
         user.setRoleId(null);
         user.setId(null);
         users.add(user);

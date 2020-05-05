@@ -30,12 +30,46 @@
         <result column="house_number" property="houseNumber" jdbcType="VARCHAR"/>
         <result column="renovation_type" property="renovationType" jdbcType="INTEGER"/>
         <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
     </resultMap>
     <sql id="Base_Column_List">
     id, owner_id, address, area_size, serv_life, pub_date, `desc`, area_id,province_id, city_id, `type`, examine_type,
     price, detail_desc, bedroom, livingroom, kitchen, bathroom, `level`, electric_type,
-    orientation, water_type, natural_gas, parking_lot, heating_type, house_number, renovation_type
+    orientation, water_type, natural_gas, parking_lot, heating_type, house_number, renovation_type,status
   </sql>
+
+<!--    // 改变房屋的处理状态-->
+    <update id="changeStatus" parameterType="java.lang.String">
+        update house set status = 1 where house_number = #{houseNumber};
+    </update>
+    <update id="changeStatusById" parameterType="java.lang.Integer">
+        update house set status = 1 where id = #{id};
+    </update>
+    <update id="changeExamineTypeByOwnerId" parameterType="java.lang.Integer">
+        update house set examine_type = 1 where owner_id = #{uId}
+    </update>
+
+    <!--    获取管理员房屋分页-->
+    <select id="getHousePageForManage" resultMap="BaseResultMap">
+        select * from house
+        where
+        <if test="address != null">
+             address like #{address} and
+        </if>
+        examine_type = #{examineType}
+        <if test="provinceId !=null">
+            and province_id = #{provinceId}
+        </if>
+        <if test="cityId != null">
+            and city_id = #{cityId}
+        </if>
+        <if test="areaId != null">
+            and area_id = #{areaId}
+        </if>
+
+        order by pub_date
+        limit #{from},#{count}
+    </select>
 
     <update id="passCheck" parameterType="java.lang.Integer">
         update house set examine_type = #{examineType} where id = #{id}
@@ -47,11 +81,30 @@
     </select>
 
     <select id="getCountForManage" resultType="java.lang.Integer">
+        <if test="today==null">
+            select count(id) from house
+            where examine_type=#{examineType}
+            <if test="provinceId !=null">
+                and province_id = #{provinceId}
+            </if>
+            <if test="cityId != null">
+                and city_id = #{cityId}
+            </if>
+            <if test="areaId != null">
+                and area_id = #{areaId}
+            </if>
+            <if test="address != null">
+                and address like #{address}
+            </if>
+            <if test="type !=null">
+                and type = #{type}
+            </if>
+        </if>
 
-        select count(h.id) from house h
-        left join `transaction` t on h.house_number = t.house_number
-        WHERE h.type = #{type} and h.examine_type = #{examineType}
         <if test="today !=null">
+            select count(h.id) from house h
+            left join `transaction` t on h.house_number = t.house_number
+            WHERE h.type = #{type} and h.examine_type = #{examineType}
             and To_DAYS(t.date) = TO_DAYS(#{today})
             and t.id is not null
         </if>
@@ -60,17 +113,17 @@
 
 
     <!--  获取分页-->
-    <!--  <select id="getHousePage" resultMap="BaseResultMap">-->
-    <!--    select * from house where-->
-    <!--    <if test="type!=null">-->
+    <select id="getHousePageForMange" resultMap="BaseResultMap">
+        select * from house where
+        <if test="type!=null">
 
-    <!--      `type`=#{type}-->
-    <!--      and-->
-    <!--    </if>-->
-    <!--     examine_type = 2-->
+            `type`=#{type}
+            and
+        </if>
+        examine_type = 1
 
-    <!--    limit #{from},#{count}-->
-    <!--  </select>-->
+        limit #{from},#{count}
+    </select>
 
     <update id="markHouseSold" parameterType="java.lang.String">
         update house set examine_type = 3 where  house_number = #{houseNumber}

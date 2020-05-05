@@ -8,6 +8,7 @@ public interface UserService {
 
     //获取所有用户
     List<User> findAll(Integer page, Integer count);
+    List<User> findAll(Integer page, Integer count,Integer examineType, String account);
 
     //通过主键删除用户
     int deleteByPrimaryKey(Integer id);
@@ -33,9 +34,11 @@ public interface UserService {
 
     Integer getUidByAccount(String buyerAccount);
 
-    List<User> findLikeByAccount(String account, Integer page, Integer count);
+    List<User> findLikeByAccount(String account, Integer page, Integer count, Integer examineType);
 
-    Integer getUserCount(Integer i);
+    Integer getUserCount(Integer i,String account);
 
     int passCheck(int uId,int examineType);
+
+    int changeStatus(int uId);
 }

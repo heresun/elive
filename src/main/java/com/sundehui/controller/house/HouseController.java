@@ -2,16 +2,10 @@ package com.sundehui.controller.house;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.sundehui.domain.House;
-import com.sundehui.domain.Image;
+import com.sundehui.domain.*;
 
-import com.sundehui.domain.Transaction;
-import com.sundehui.domain.User;
 import com.sundehui.domain.help.FilterParams;
-import com.sundehui.service.HouseService;
-import com.sundehui.service.ImageService;
-import com.sundehui.service.TransactionService;
-import com.sundehui.service.UserService;
+import com.sundehui.service.*;
 import com.sundehui.util.Constants;
 import com.sundehui.util.ImgUtil;
 import com.sundehui.util.Utils;
@@ -41,6 +35,9 @@ public class HouseController {
 
     @Autowired
     private TransactionService transactionService;
+
+    @Autowired
+    private HouseProveService houseProveService;
 
     // 根据房屋id获取房屋的全部信息
     @GetMapping(value = "/getOne", produces = "text/html;charset=UTF-8")
@@ -73,7 +70,7 @@ public class HouseController {
 
     // 发布房源
     @PostMapping("/addOne")
-    public int insertOne(HttpServletRequest request) {
+    public String insertOne(HttpServletRequest request) {
 
         System.out.println("===========================================================");
         // 获取session域对象，从中获取图片的真实路径
@@ -82,7 +79,7 @@ public class HouseController {
 
         String house = request.getParameter("house");
         if (house == null) {
-            return 0;
+            return "err";
         }
 
         JSONObject jsonObject = JSON.parseObject(house);
@@ -121,8 +118,11 @@ public class HouseController {
             //存储完毕，销毁session中的fileNames这个属性
             session.removeAttribute(Constants.FILE_NAMES);
         }
-        System.out.println("end");
-        return i;
+
+        if (i <= 0) {
+            return "err";
+        }
+        return houseNumber;
     }
 
 
@@ -164,12 +164,6 @@ public class HouseController {
 
         System.out.println("/houseCount");
         FilterParams param = Utils.filterParam(request);
-//
-//        int type = 0;
-//        String param = request.getParameter("type");
-//        if (param != null) {
-//            type = Integer.parseInt(param);
-//        }
 
         int houseCount = service.getHouseCount(param);
         return houseCount;
@@ -194,7 +188,7 @@ public class HouseController {
 
     // 该接口用于更新房屋信息
     @PostMapping("/update")
-    public int updateHouseInfo (HttpServletRequest request){
+    public int updateHouseInfo(HttpServletRequest request) {
         System.out.println("===========================================================");
         // 获取session域对象，从中获取图片的真实路径
         HttpSession session = request.getSession(false);
@@ -213,17 +207,16 @@ public class HouseController {
         String houseNumber = houseSale.getHouseNumber();
 
 
-
         if (session != null) {
             // 执行更新
             i = service.updateByPrimaryKeySelective(houseSale);
 
             List<String> fileNames = (List<String>) session.getAttribute(Constants.FILE_NAMES);
+            Image image = new Image();
+            image.setHouseNumber(houseNumber);
             fileNames.forEach(item -> {
                 // 创建图片对象
-                Image image = new Image();
                 image.setUri(item);
-                image.setHouseNumber(houseNumber);
                 imageService.insertSelective(image);
 
             });
@@ -237,18 +230,18 @@ public class HouseController {
 
     // 通过房屋编号删除一个房源，并且删除成功后再根据房屋编号删除该房源对应的图片
     @GetMapping("/deleteOne")
-    public int deleteOne (HttpServletRequest request){
+    public int deleteOne(HttpServletRequest request) {
 
         System.out.println("/house/deleteOne");
         String houseNumber = request.getParameter("houseNumber");
-        if (houseNumber == null){
+        if (houseNumber == null) {
             return 0;
         }
 
         Integer i = service.deleteByHouseNumber(houseNumber);
 
-        System.out.println("=========="+i);
-        if (i > 0){
+        System.out.println("==========" + i);
+        if (i > 0) {
             imageService.deleteByHouseNumber(houseNumber);
             return i;
         }
@@ -258,12 +251,12 @@ public class HouseController {
     // 通过房屋编号将一个房源标记为已售出,并将其插入交易表
     @GetMapping("/saleOne")
     @Transactional
-    public int saleOne (HttpServletRequest request){
+    public int saleOne(HttpServletRequest request) {
         System.out.println("/house/delete");
         String houseNumber = request.getParameter("houseNumber");
         String buyerAccount = request.getParameter("buyerAccount");
         HttpSession session = request.getSession(false);
-        if (houseNumber == null || buyerAccount ==null || session==null){
+        if (houseNumber == null || buyerAccount == null || session == null) {
             return 0;
         }
 
@@ -279,14 +272,43 @@ public class HouseController {
         transaction.setHouseNumber(houseNumber);
         Integer i = service.markHouseSold(houseNumber);
 
-        if (i>0){
+        if (i > 0) {
             int i1 = transactionService.insertSelective(transaction);
             return i1;
         }
 
 
-
         return i;
 
     }
+
+    @PostMapping("/addProve")
+    public String addHouseProve(HttpServletRequest request) {
+
+        System.out.println("--------------addProve----------------------");
+        String houseNumber = request.getParameter("houseNumber");
+        if (houseNumber == null) {
+            return "err";
+        }
+
+        HttpSession session = request.getSession(false);
+        if (session==null){
+            return "err";
+        }
+        List<String> fileNames = (List<String>) session.getAttribute(Constants.FILE_NAMES);
+        if (fileNames == null){
+            return "err";
+        }
+        HouseProve houseProve = new HouseProve();
+        houseProve.setHouseNumber(houseNumber);
+        fileNames.forEach(item->{
+            houseProve.setUri(item);
+            houseProveService.insertSelective(houseProve);
+        });
+        session.removeAttribute(Constants.FILE_NAMES);
+
+        return "ok";
+
+    }
+
 }

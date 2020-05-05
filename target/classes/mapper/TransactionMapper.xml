@@ -1,20 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sundehui.mapper.TransactionMapper">
-    <resultMap id="BaseResultMap" type="com.sundehui.domain.Transaction">
-        <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="buyer_id" property="buyerId" jdbcType="INTEGER"/>
-        <result column="seller_id" property="sellerId" jdbcType="INTEGER"/>
-        <result column="date" property="date" jdbcType="TIMESTAMP"/>
-        <result column="house_number" property="houseNumber" jdbcType="VARCHAR"/>
-    </resultMap>
 
+    <resultMap id="BaseResultMap" type="com.sundehui.domain.Transaction">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+        <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+        <result column="date" jdbcType="TIMESTAMP" property="date" />
+        <result column="house_number" jdbcType="VARCHAR" property="houseNumber" />
+    </resultMap>
     <sql id="Base_Column_List">
     id, buyer_id, seller_id, date, house_number
   </sql>
 
-    <select id="getTransaction" parameterType="java.lang.Integer"
-            resultType="com.sundehui.domain.help.TransactionHelper">
+    <select id="getTransactionByHouseNumber" parameterType="java.lang.String" resultType="com.sundehui.domain.help.TransactionHelper">
+
+        select t.date transactionDate, seller.username sellerName,seller.phone sellerPhone,
+        buyer.username buyerName,buyer.phone buyerPhone,
+        house.id houseId
+        from `transaction` t left join `user` seller
+        on seller.id = t.seller_id left join `user` buyer
+        on buyer.id = t.buyer_id left JOIN house
+        on t.house_number = house.house_number WHERE
+        t.house_number = #{houseNumber}
+    </select>
+
+    <select id="getTransaction" parameterType="java.lang.Integer" resultType="com.sundehui.domain.help.TransactionHelper">
 
         select t.date transactionDate, seller.username sellerName,seller.phone sellerPhone,
          buyer.username buyerName,buyer.phone buyerPhone,
@@ -30,9 +41,9 @@
           buyer.id = #{uId}
         </if>
   </select>
-    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List"/>
+        <include refid="Base_Column_List" />
         from transaction
         where id = #{id,jdbcType=INTEGER}
     </select>

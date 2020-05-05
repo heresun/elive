@@ -1,11 +1,11 @@
-package com.sundehui.mapper;
+package com.sundehui.service;
 
 import com.sundehui.domain.HouseProve;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface HouseProveMapper {
+public interface HouseProveService {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(HouseProve record);
@@ -18,7 +18,7 @@ public interface HouseProveMapper {
 
     int updateByPrimaryKey(HouseProve record);
 
-    List<HouseProve> getAll(@Param("houseNumber") String houseNumber);
+    List<String> getAll(String houseNumber);
 
-    int deleteOne(@Param("houseNumber") String houseNumber,@Param("imageName") String imageName);
+    int deleteOne(String houseNumber, String imageName);
 }

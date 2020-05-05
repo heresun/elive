@@ -47,9 +47,20 @@ public interface HouseMapper {
     // 通过房屋编号将一个房屋标记为已售出
     Integer markHouseSold(@Param("houseNumber") String houseNumber);
 
-    Integer getCountForManage(@Param("type") int type,@Param("examineType") int examineType, @Param("today") Date today);
+    Integer getCountForManage(@Param("type") Integer type,@Param("examineType") Integer examineType,
+                              @Param("today") Date today,@Param("provinceId") Integer provinceId,
+                              @Param("cityId") Integer cityId, @Param("areaId") Integer areaId, @Param("address") String address);
 
-    List<House> getUnchecked(@Param("from") int from,@Param("count") int count);
+    List<House> getUnchecked(@Param("from") Integer from,@Param("count") Integer count);
 
-    int passCheck(@Param("id") int hId, @Param("examineType") int examineType);
+    int passCheck(@Param("id") Integer hId, @Param("examineType") Integer examineType);
+
+    List<House> getHousePageForManage(@Param("from") Integer from, @Param("count") Integer count,@Param("examineType") Integer examineType,
+                                      @Param("provinceId") Integer provinceId,@Param("cityId") Integer cityId,
+                                      @Param("areaId") Integer areaId,@Param("address") String address);
+
+    int changeStatus(@Param("houseNumber") String houseNumber);
+    int changeStatusById(@Param("id") Integer id);
+
+    int changeExamineTypeByOwnerId(@Param("uId") Integer uId);
 }

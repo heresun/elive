@@ -78,11 +78,9 @@ public class DistrictController {
                 District district = service.selectByPrimaryKey(areaId);
                 builder.append(district.getDistrictName());
             }
-
         } else {
             return null;
         }
-
         return builder.toString();
 
     }

@@ -9,6 +9,15 @@
   <sql id="Base_Column_List" >
     id, uri, house_number
   </sql>
+
+
+  <delete id="deleteOne" parameterType="java.lang.String">
+    delete from house_prove where house_number = #{houseNumber} and uri like #{imageName}
+  </delete>
+  <select id="getAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from house_prove where house_number = #{houseNumber}
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

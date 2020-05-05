@@ -42,9 +42,18 @@ public interface HouseService {
     // 通过房屋编号将一个房屋标记为已售出
     Integer markHouseSold(String houseNumber);
 
-    Integer getCountForManage(int type, int examineType, Date today);
+    Integer getCountForManage(Integer type, Integer examineType, Date today, Integer provinceId, Integer cityId, Integer areaId, String address);
 
     List<House> getUnchecked(int page, int count);
 
-    int passCheck(int hId,int examineType);
+    int passCheck(Integer hId,Integer examineType);
+
+    List<House> getHousePageForManage(Integer page,Integer count,Integer examineType,
+                                      Integer provinceId,Integer cityId,Integer areaId,String address);
+
+
+    int changeStatus(String houseNumber);
+    int changeStatus(Integer id);
+
+    int changeExamineTypeByOwnerId(Integer uId);
 }

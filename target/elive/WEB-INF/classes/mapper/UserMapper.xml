@@ -11,32 +11,46 @@
         <result column="role_id" property="roleId" jdbcType="INTEGER"/>
         <result column="role_name" property="roleName" jdbcType="VARCHAR"/>
         <result column="examine_type" property="examineType" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
     id, account, password, username, phone, photo, role_id, examine_type
     </sql>
 
-    <update id="passCheck" parameterType="java.lang.Integer">
+    <update id="changeStatus" parameterType="java.lang.Integer">
+        update user set status = 1 where id = #{uId};
+    </update>
+
+    <select id="findAllByExamineType" parameterType="java.lang.Integer" resultMap="user">
+        select * from user where examine_type = #{examineType}
+        <if test="account!=null">
+            account like #{account}
+        </if>
+        limit #{from},#{count};
+    </select>
+
+    <update id="changeExamineType" parameterType="java.lang.Integer">
         update user set examine_type = #{examineType} where id = #{id}
     </update>
 
 
     <select id="getUserCount" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         select count(id) from user
-        <if test="type == 0">
-            where examine_type = #{type}
+        <if test="examineType != null">
+            where examine_type = #{examineType}
         </if>
-        <if test="type == 1">
-            where examine_type = #{type}
-        </if>
-        <if test="type == -1">
-            where examine_type = #{type}
+        <if test="account!=null">
+            and account like #{account}
         </if>
     </select>
 
     <select id="findLikeByAccount" resultMap="user">
-        select * from user where account like #{accountLike} limit #{from}, #{count}
+        select * from user where account like #{accountLike}
+         <if test="examineType != null">
+             and examine_type = #{examineType}
+         </if>
+         limit #{from}, #{count}
     </select>
     
     <select id="getUidByAccount" parameterType="java.lang.String" resultType="java.lang.Integer">

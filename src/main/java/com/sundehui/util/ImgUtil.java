@@ -14,10 +14,13 @@ public class ImgUtil {
         String baseUrl = getBaseUrl(request);
 
         list.forEach(item -> {
-            int i = item.indexOf("upload");
-            String[] strs = item.substring(i).split("\\\\");
-            String url = baseUrl + String.join("/", strs);
-            urls.add(url);
+            if (item !=null){
+                int i = item.indexOf("upload");
+                String[] strs = item.substring(i).split("\\\\");
+                String url = baseUrl + String.join("/", strs);
+                urls.add(url);
+            }
+
         });
 
         return urls;

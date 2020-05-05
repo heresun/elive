@@ -54,4 +54,10 @@ public class TransactionServiceImpl implements TransactionService {
         return transactions;
     }
 
+    @Override
+    public TransactionHelper getTransaction(String houseNumber) {
+        TransactionHelper  transactionHelper= mapper.getTransactionByHouseNumber(houseNumber);
+        return transactionHelper;
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.sundehui.mapper;
+package com.sundehui.service;
 
 import com.sundehui.domain.HouseProve;
 import com.sundehui.domain.UserProve;
@@ -6,7 +6,8 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface UserProveMapper {
+public interface UserProveService {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(UserProve record);
@@ -19,5 +20,7 @@ public interface UserProveMapper {
 
     int updateByPrimaryKey(UserProve record);
 
-    List<UserProve> selectByUserId(@Param("uId") Integer uId);
+    List<UserProve> selectByUserId( Integer uId);
+
+
 }

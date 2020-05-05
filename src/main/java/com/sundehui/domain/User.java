@@ -1,5 +1,7 @@
 package com.sundehui.domain;
 
+import java.util.List;
+
 public class User {
     private Integer id;
 
@@ -18,6 +20,26 @@ public class User {
     private String roleName;
 
     private Integer examineType;
+
+    private List<String> proveUrls;
+
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public List<String> getProveUrls() {
+        return proveUrls;
+    }
+
+    public void setProveUrls(List<String> proveUrls) {
+        this.proveUrls = proveUrls;
+    }
 
     public Integer getExamineType() {
         return examineType;

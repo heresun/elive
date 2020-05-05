@@ -22,7 +22,6 @@ public class ManageResourceInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         HttpSession session = request.getSession(false);
-        PrintWriter writer = response.getWriter();
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
 
@@ -31,7 +30,8 @@ public class ManageResourceInterceptor implements HandlerInterceptor {
             User  user = (User) session.getAttribute(Constants.USER_SESSION);
             if (user!=null){
                 String roleName = user.getRoleName();
-                if (roleName!="admin"){
+                if (!"admin".equals(roleName)){
+                    PrintWriter writer = response.getWriter();
 
                     msg.setStatus(-1);
                     msg.setMsg("您没有权限访问该资源!");
@@ -43,6 +43,8 @@ public class ManageResourceInterceptor implements HandlerInterceptor {
                     return true;
                 }
             }else {
+                PrintWriter writer = response.getWriter();
+
                 msg.setStatus(0);
                 msg.setMsg("您尚未登录，请登录!");
                 writer.write(JSON.toJSONString(msg));
