@@ -35,7 +35,7 @@ public class Utils {
             Future<String> submit = pool.submit(getRun(files[i], request));
             list.add(submit);
         }
-        list.forEach(item->{
+        list.forEach(item -> {
             try {
                 fileNameList.add(item.get());
             } catch (InterruptedException e) {
@@ -49,7 +49,7 @@ public class Utils {
     }
 
 
-    private static  Callable<String> getRun(MultipartFile file, HttpServletRequest request) {
+    private static Callable<String> getRun(MultipartFile file, HttpServletRequest request) {
         return () -> {
 
             StringBuilder builder = new StringBuilder();
@@ -68,7 +68,7 @@ public class Utils {
             String fileName = builder.toString();
 
             if (!file.isEmpty()) {
-                try(
+                try (
                         OutputStream os = new FileOutputStream(fileName);
                         InputStream is = file.getInputStream();
                 ) {
@@ -78,7 +78,7 @@ public class Utils {
                     //声明从输入流一次获取的数据长度
                     int len = 0;
                     //输出
-                    while((len = is.read(buffer))>0){
+                    while ((len = is.read(buffer)) > 0) {
                         os.write(buffer, 0, len);
                     }
 
@@ -92,22 +92,22 @@ public class Utils {
     }
 
     // 生成随机字符串，该字符串作为房源编号,type用来指明房屋类型
-    public static String getHouseNumber (int length){
+    public static String getHouseNumber(int length) {
 
-        String str="0123456789";
-        Random random=new Random();
-        StringBuffer sb=new StringBuffer();
+        String str = "0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
         sb.append("MF");
-        for(int i=0;i<length;i++){
-            int number=random.nextInt(str.length());
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(str.length());
             sb.append(str.charAt(number));
         }
 
-        return  sb.toString();
+        return sb.toString();
     }
 
     // 获取筛选房屋的条件
-    public static FilterParams filterParam(HttpServletRequest request){
+    public static FilterParams filterParam(HttpServletRequest request) {
 
 //        String paramPage = request.getParameter("page");
 //        String paramCount = request.getParameter("count");
@@ -158,6 +158,23 @@ public class Utils {
 
 //        return paramMap;
         return filterParams;
+    }
+
+    // 将"yyyy-mm-dd"修改为"yy年m月份"
+    public static String getDateStr(String rawDataStr) {
+        StringBuilder builder = new StringBuilder();
+        String[] split = rawDataStr.split("-");
+        builder.append(split[0].substring(2) + "年");
+        if (split[1].startsWith("0")) {
+
+            builder.append(split[1].substring(1) + "月份");
+        } else {
+            builder.append(split[1] + "月份");
+
+        }
+
+        return builder.toString();
+
     }
 }
 

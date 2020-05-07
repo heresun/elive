@@ -23,4 +23,5 @@ public interface UserProveService {
     List<UserProve> selectByUserId( Integer uId);
 
 
+    int deleteOneProve(String imageName, Integer uId);
 }

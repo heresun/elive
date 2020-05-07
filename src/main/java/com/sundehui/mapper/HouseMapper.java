@@ -4,6 +4,7 @@ import com.sundehui.domain.House;
 import com.sundehui.domain.help.FilterParams;
 import org.apache.ibatis.annotations.Param;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +21,9 @@ public interface HouseMapper {
     int updateByPrimaryKeySelective(House record);
 
     int updateByPrimaryKey(House record);
+
+    //根据区/县id、livingroom的数量，查询符合条件的房屋数量
+    int getHouseCountForAnalysis (@Param("areaId")Integer areaId, @Param("livingroom") Integer livingroom);
 
     // 获取分页， type区分二手房和新房
 //    List<House>  getHousePage(@Param("from") Integer from,@Param("count")Integer count, @Param("type")Integer type);
@@ -63,4 +67,10 @@ public interface HouseMapper {
     int changeStatusById(@Param("id") Integer id);
 
     int changeExamineTypeByOwnerId(@Param("uId") Integer uId);
+
+    Double selectAvgPrice(@Param("areaId") Integer areaId, @Param("examineType") Integer examineType);
+
+    Integer selectTransAnalysisData(@Param("areaId") Integer areaId,@Param("preDate") String preDate);
+
+    Integer selectHouseAnalysisData(@Param("areaId") Integer areaId);
 }

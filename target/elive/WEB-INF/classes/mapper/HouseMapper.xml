@@ -38,6 +38,16 @@
     orientation, water_type, natural_gas, parking_lot, heating_type, house_number, renovation_type,status
   </sql>
 
+    <select id="selectHouseAnalysisData" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from house where area_id = #{areaId} and examine_type = 3
+    </select>
+
+    <select id="selectTransAnalysisData" resultType="java.lang.Integer">
+        select count(*) from transaction t left join house h
+        on t.house_number = h.house_number
+        WHERE h.area_id=#{areaId} and year(t.date) = year(#{preDate}) and month(t.date) = month(#{preDate})
+    </select>
+
 <!--    // 改变房屋的处理状态-->
     <update id="changeStatus" parameterType="java.lang.String">
         update house set status = 1 where house_number = #{houseNumber};
@@ -48,6 +58,14 @@
     <update id="changeExamineTypeByOwnerId" parameterType="java.lang.Integer">
         update house set examine_type = 1 where owner_id = #{uId}
     </update>
+
+    <select id="getHouseCountForAnalysis" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from house where examine_type=3 and area_id = #{areaId} and livingroom=#{livingroom}
+    </select>
+
+    <select id="selectAvgPrice" parameterType="java.lang.Integer" resultType="java.lang.Double">
+        select AVG(price) from house where area_id = #{areaId} and examine_type=#{examineType}
+    </select>
 
     <!--    获取管理员房屋分页-->
     <select id="getHousePageForManage" resultMap="BaseResultMap">

@@ -20,4 +20,6 @@ public interface UserProveMapper {
     int updateByPrimaryKey(UserProve record);
 
     List<UserProve> selectByUserId(@Param("uId") Integer uId);
+
+    int deleteOneProve(@Param("imageName") String imageName,@Param("uId") Integer uId);
 }

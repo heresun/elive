@@ -7,70 +7,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/HouseMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/HouseProveController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/MangeMessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/MemorandumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/HouseMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/Memorandum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/UserMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMessageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/MemorandumMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMessageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseProveService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/MemorandumService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserProveService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseMessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseProveServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/MemorandumServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserMessageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserProveServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseMessageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MemorandumMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMessageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/Aanlysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/help/HouseAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/help/LayoutAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/help/PriceAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/help/TransactionAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/HouseMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/HouseMessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginSignController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/LoginSignController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/UserMessageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/house/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/house/HouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageHouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageHouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/manage/ManageUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/interceptor/ManageResourceInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/interceptor/ManageResourceInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/UtilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/other/UtilController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseProveMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseProveMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/TransactionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/TransactionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/HouseMessageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserMessageMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserProveMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/mapper/UserProveMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/HouseMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserProveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/UserProveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/HouseMessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserMessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserProveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserProveServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/test/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/test/MyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/util/ImgUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/util/ImgUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/util/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/util/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HouseProveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseProveMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TransactionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TransactionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HouseMessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HouseMessageMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMessageMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserProveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserProveMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/HouseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TransactionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TransactionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/application-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/application-dao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/HouseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/HouseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/TransactionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/TransactionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/image/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/upload/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/upload/image/test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/upload/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/elive/upload/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/upload/logo.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,29 +132,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/elive/upload" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\java\elive\target\elive\upload" />
-      <recent name="E:\java\elive\src\main\resources\mapper" />
-      <recent name="E:\java\elive\src\main\resources\dao" />
-      <recent name="E:\java\elive\src\main\resources\com\sundehui\dao" />
+      <recent name="E:\java\elive\target\elive\upload\image" />
+      <recent name="E:\java\elive\src\main\webapp\upload\image" />
+      <recent name="E:\java\elive\src\main\webapp\upload" />
       <recent name="E:\java\elive\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sundehui.service" />
       <recent name="com.sundehui.controller" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java\elive\target\elive\upload" />
-      <recent name="E:\java\elive\target\elive\upload\image" />
-      <recent name="E:\java\elive\src\main\webapp\upload\image" />
-      <recent name="E:\java\elive\src\main\webapp\upload" />
+      <recent name="E:\java\elive\src\main\resources\mapper" />
+      <recent name="E:\java\elive\src\main\resources\dao" />
+      <recent name="E:\java\elive\src\main\resources\com\sundehui\dao" />
       <recent name="E:\java\elive\src\main\resources" />
     </key>
   </component>
@@ -418,7 +391,9 @@
       <workItem from="1588414731850" duration="12057000" />
       <workItem from="1588513353894" duration="17278000" />
       <workItem from="1588568712237" duration="16628000" />
-      <workItem from="1588664768754" duration="25551000" />
+      <workItem from="1588664768754" duration="25600000" />
+      <workItem from="1588746918832" duration="27655000" />
+      <workItem from="1588834716112" duration="19891000" />
     </task>
     <task id="LOCAL-00001" summary="添加了mybatis下划线命名到驼峰命名的转换">
       <created>1583929097802</created>
@@ -497,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588518207769</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="完成管理后台的一些功能">
+      <created>1588705711578</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588705711578</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,6 +501,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="79" key="#Console/0.0.1536.834@0.0.1536.834" timestamp="1588478117075" />
+    <state x="361" y="79" key="#Images" timestamp="1588754603991">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="79" key="#Images/0.0.1536.834@0.0.1536.834" timestamp="1588754603991" />
     <state x="559" y="8" key="#Inspections" timestamp="1584405543968">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -528,11 +514,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="76" key="#Notifications/0.0.1536.834@0.0.1536.834" timestamp="1584268015538" />
-    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588319666807">
+    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588751827855">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="96" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1582978818135" />
-    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1588319666807" />
+    <state x="115" y="1" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1588751827855" />
     <state x="396" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584395332527">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -541,41 +527,42 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="526" y="290" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.834@0.0.1536.834" timestamp="1584117321013" />
-    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser" timestamp="1588704514680">
+    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser" timestamp="1588874741029">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="765" y="33" key="#com.intellij.ide.util.MemberChooser/0.0.1280.689@0.0.1280.689" timestamp="1583226529438" />
-    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1588704514680" />
-    <state x="233" y="4" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1582894422786">
-      <screen x="0" y="0" width="1280" height="689" />
+    <state x="918" y="40" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1588874741029" />
+    <state x="280" y="5" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1588751826945">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="233" y="4" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1280.689@0.0.1280.689" timestamp="1582894422786" />
+    <state x="280" y="5" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.834@0.0.1536.834" timestamp="1588751826945" />
     <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1587526003183">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="548" y="302" width="439" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1587526003183" />
-    <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587395821415">
+    <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588874681702">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1587395821414" />
+    <state x="426" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1588874681702" />
     <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583930352295">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="371" y="95" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583229612020" />
     <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1583930352295" />
-    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1588518204661">
+    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1588705707612">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588518204661" />
+    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588705707612" />
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1588516838422">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog/0.0.1536.834@0.0.1536.834" timestamp="1588516838422" />
-    <state x="505" y="122" key="FileChooserDialogImpl" timestamp="1584468437273">
+    <state x="505" y="122" key="FileChooserDialogImpl" timestamp="1588858744871">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="421" y="101" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583151530505" />
-    <state x="505" y="122" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1584468437273" />
+    <state x="505" y="122" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1588858744871" />
     <state x="593" y="332" width="373" height="183" key="Github.CreateGistDialog" timestamp="1587802909493">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -596,86 +583,86 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1141" height="260" key="GridCell.Tab.-1.right/0.0.1280.689@0.0.1280.689" timestamp="1583227258846" />
-    <state width="1180" height="147" key="GridCell.Tab.0.bottom" timestamp="1588705674426">
+    <state width="958" height="31" key="GridCell.Tab.0.bottom" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588705674426" />
-    <state width="1180" height="147" key="GridCell.Tab.0.center" timestamp="1588705674426">
+    <state width="958" height="31" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.0.center" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588705674426" />
-    <state width="1180" height="147" key="GridCell.Tab.0.left" timestamp="1588705674423">
+    <state width="958" height="31" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.0.left" timestamp="1588877010115">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588705674423" />
-    <state width="1180" height="147" key="GridCell.Tab.0.right" timestamp="1588705674426">
+    <state width="958" height="31" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588877010115" />
+    <state width="958" height="31" key="GridCell.Tab.0.right" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588705674426" />
-    <state width="1180" height="147" key="GridCell.Tab.1.bottom" timestamp="1588705674428">
+    <state width="958" height="31" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.1.bottom" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="147" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588705674428" />
-    <state width="1180" height="147" key="GridCell.Tab.1.center" timestamp="1588705674427">
+    <state width="958" height="31" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.1.center" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="147" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588705674427" />
-    <state width="1180" height="147" key="GridCell.Tab.1.left" timestamp="1588705674427">
+    <state width="958" height="31" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.1.left" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="147" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588705674427" />
-    <state width="1180" height="147" key="GridCell.Tab.1.right" timestamp="1588705674427">
+    <state width="958" height="31" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.1.right" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529145" />
-    <state width="1180" height="147" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588705674427" />
-    <state width="1180" height="147" key="GridCell.Tab.2.bottom" timestamp="1588705674427">
+    <state width="958" height="31" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.2.bottom" timestamp="1588877010117">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588705674427" />
-    <state width="1180" height="147" key="GridCell.Tab.2.center" timestamp="1588705674427">
+    <state width="958" height="31" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588877010117" />
+    <state width="958" height="31" key="GridCell.Tab.2.center" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.center/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588705674427" />
-    <state width="1180" height="147" key="GridCell.Tab.2.left" timestamp="1588705674426">
+    <state width="958" height="31" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.2.left" timestamp="1588877010116">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.left/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588705674426" />
-    <state width="1180" height="147" key="GridCell.Tab.2.right" timestamp="1588705674427">
+    <state width="958" height="31" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1588877010116" />
+    <state width="958" height="31" key="GridCell.Tab.2.right" timestamp="1588877010117">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="228" key="GridCell.Tab.2.right/0.0.1280.689@0.0.1280.689" timestamp="1583308529144" />
-    <state width="1180" height="147" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588705674427" />
-    <state width="1180" height="426" key="GridCell.Tab.3.bottom" timestamp="1588541005717">
+    <state width="958" height="31" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1588877010117" />
+    <state width="1180" height="210" key="GridCell.Tab.3.bottom" timestamp="1588754275302">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="188" key="GridCell.Tab.3.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583229006515" />
-    <state width="1180" height="426" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588541005717" />
-    <state width="1180" height="426" key="GridCell.Tab.3.center" timestamp="1588541005716">
+    <state width="1180" height="210" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588754275302" />
+    <state width="1180" height="210" key="GridCell.Tab.3.center" timestamp="1588754275302">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="188" key="GridCell.Tab.3.center/0.0.1280.689@0.0.1280.689" timestamp="1583229006514" />
-    <state width="1180" height="426" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1588541005716" />
-    <state width="1180" height="426" key="GridCell.Tab.3.left" timestamp="1588541005716">
+    <state width="1180" height="210" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1588754275302" />
+    <state width="1180" height="210" key="GridCell.Tab.3.left" timestamp="1588754275302">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="188" key="GridCell.Tab.3.left/0.0.1280.689@0.0.1280.689" timestamp="1583229006514" />
-    <state width="1180" height="426" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1588541005716" />
-    <state width="1180" height="426" key="GridCell.Tab.3.right" timestamp="1588541005716">
+    <state width="1180" height="210" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1588754275302" />
+    <state width="1180" height="210" key="GridCell.Tab.3.right" timestamp="1588754275302">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1141" height="188" key="GridCell.Tab.3.right/0.0.1280.689@0.0.1280.689" timestamp="1583229006515" />
-    <state width="1180" height="426" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1588541005716" />
+    <state width="1180" height="210" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1588754275302" />
     <state width="218" height="477" key="HiddenNamespacesPopup" timestamp="1582978824563">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -694,10 +681,10 @@
     </state>
     <state x="362" y="87" width="561" height="524" key="StructurePopup/0.0.1280.689@0.0.1280.689" timestamp="1583248281314" />
     <state x="434" y="105" width="674" height="635" key="StructurePopup/0.0.1536.834@0.0.1536.834" timestamp="1588609958767" />
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1588518225678">
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1588705715776">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588518225678" />
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588705715776" />
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588517100765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -742,11 +729,11 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="511" y="50" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1588516525056" />
-    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup" timestamp="1588701647823">
+    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup" timestamp="1588796145622">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583220246499" />
-    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1588701647823" />
+    <state x="364" y="12" width="807" height="821" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1588796145622" />
     <state x="321" y="29" key="spring file set editor" timestamp="1583123648041">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

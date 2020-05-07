@@ -250,7 +250,6 @@ public class HouseController {
 
     // 通过房屋编号将一个房源标记为已售出,并将其插入交易表
     @GetMapping("/saleOne")
-    @Transactional
     public int saleOne(HttpServletRequest request) {
         System.out.println("/house/delete");
         String houseNumber = request.getParameter("houseNumber");
@@ -311,4 +310,11 @@ public class HouseController {
 
     }
 
+    @GetMapping("/getRecommend")
+    public void getRecommend (HttpServletRequest request){
+
+        System.out.println("==========================----+++++++");
+        String id = request.getSession().getId();
+        System.out.println(id);
+    }
 }

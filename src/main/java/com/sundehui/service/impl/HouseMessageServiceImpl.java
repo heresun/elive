@@ -6,11 +6,32 @@ import com.sundehui.service.HouseMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HouseMessageServiceImpl implements HouseMessageService {
 
     @Autowired
     private HouseMessageMapper mapper;
+
+    @Override
+    public List<HouseMessage> getAll(Integer id) {
+        List<HouseMessage> messages =  mapper.getAll(id);
+        return messages;
+    }
+
+    @Override
+    public int deleteOne(Integer id) {
+        int i = mapper.deleteOne(id);
+
+        return i;
+    }
+
+    @Override
+    public int changeStatus(Integer id) {
+        int i = mapper.changeStatus(id);
+        return i;
+    }
 
     @Override
     public int deleteByPrimaryKey(Integer id) {

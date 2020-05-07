@@ -11,6 +11,21 @@
   <sql id="Base_Column_List" >
     id, content, user_id, status, pub_date
   </sql>
+
+  <select id="getAll" resultMap="BaseResultMap">
+    select * from user_message where user_id = #{uId} order by pub_date;
+  </select>
+
+  <update id="changeStatus" parameterType="java.lang.Integer">
+    update user_message set status=1 where id = #{id}
+  </update>
+
+  <delete id="deleteOne" parameterType="java.lang.Integer">
+    delete from user_message where id = #{id}
+  </delete>
+
+
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

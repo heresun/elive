@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.sundehui.domain.User;
 import com.sundehui.service.UserService;
 import com.sundehui.util.Constants;
+import com.sundehui.util.ImgUtil;
 import com.sundehui.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +35,9 @@ public class LoginSignController {
         } else if (user.getPassword().equals(password)) {
             HttpSession session = request.getSession();
             session.setAttribute(Constants.USER_SESSION, user);
+
             user.setPassword("");
+            user.setPhoto(ImgUtil.realPathToUrl(request,user.getPhoto()));
             return JSON.toJSONString(user);
         } else {
             return "err";

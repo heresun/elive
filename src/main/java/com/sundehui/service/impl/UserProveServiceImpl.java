@@ -27,7 +27,8 @@ public class UserProveServiceImpl implements UserProveService {
 
     @Override
     public int insertSelective(UserProve record) {
-        return 0;
+        int i = mapper.insertSelective(record);
+        return i;
     }
 
     @Override
@@ -50,4 +51,13 @@ public class UserProveServiceImpl implements UserProveService {
         List<UserProve> houseProves = mapper.selectByUserId(uId);
         return houseProves;
     }
+
+    @Override
+    public int deleteOneProve(String imageName, Integer uId) {
+        String img = "%"+imageName+"%";
+        int i = mapper.deleteOneProve(img,uId);
+
+        return i;
+    }
+
 }

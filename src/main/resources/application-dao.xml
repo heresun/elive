@@ -54,10 +54,10 @@
     <!--2.2配置事务切入-->
     <aop:config>
         <aop:pointcut id="txPointCut"
-                      expression="execution(* com.sundehui.controller.*.*(..))"/>
+                      expression="execution(* com.sundehui.mapper.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
     </aop:config>
     <!--事务管理器注解驱动，先不用-->
-    <tx:annotation-driven transaction-manager="txManager"/>
+<!--    <tx:annotation-driven transaction-manager="txManager"/>-->
 
 </beans>
