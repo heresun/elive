@@ -1,7 +1,9 @@
 package com.sundehui.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.sundehui.domain.Recommend;
 import com.sundehui.domain.User;
+import com.sundehui.service.RecommendService;
 import com.sundehui.service.UserService;
 import com.sundehui.util.Constants;
 import com.sundehui.util.ImgUtil;
@@ -14,8 +16,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/user")
@@ -23,7 +29,10 @@ public class LoginSignController {
     @Autowired
     private UserService service;
 
-    @PostMapping(value = "/login",produces="text/html;charset=UTF-8")
+    @Autowired
+    private RecommendService recommendService;
+
+    @PostMapping(value = "/login", produces = "text/html;charset=UTF-8")
     public String login(HttpServletRequest request) {
 
         String account = request.getParameter("account");
@@ -35,9 +44,14 @@ public class LoginSignController {
         } else if (user.getPassword().equals(password)) {
             HttpSession session = request.getSession();
             session.setAttribute(Constants.USER_SESSION, user);
+            session.setAttribute(Constants.PAGE_ONE,1);
+            session.setAttribute(Constants.PAGE_TWO,1);
+            // 这里用来保存访问的房屋数量
+            HashMap<Integer, Integer> hashMap = new HashMap<>();
+            session.setAttribute(Constants.ACCESS_LOG, hashMap);
 
             user.setPassword("");
-            user.setPhoto(ImgUtil.realPathToUrl(request,user.getPhoto()));
+            user.setPhoto(ImgUtil.realPathToUrl(request, user.getPhoto()));
             return JSON.toJSONString(user);
         } else {
             return "err";
@@ -47,9 +61,55 @@ public class LoginSignController {
     @PostMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
-        if (session!=null){
+        if (session != null) {
+            Map<Integer, Integer> map = (Map<Integer, Integer>) session.getAttribute(Constants.ACCESS_LOG);
+            User user = (User) session.getAttribute(Constants.USER_SESSION);
+            List<Recommend> recommends = recommendService.getAll(user.getId());
+            System.out.println("quniadayhe的雄安百姓");
+            System.out.println(recommends);
+
+            if (map != null && recommends != null) {
+                // 如果二者都不为空,才有意义
+                ArrayList<Map.Entry<Integer, Integer>> maps = new ArrayList<>();
+
+                map.entrySet().forEach(item -> {
+                    maps.add(item);
+                });
+
+                System.out.println("==============dddddd===================");
+                System.out.println(maps);
+
+                if (recommends.size() <= 0) {// 如果还没有记录,则添加之
+                        maps.forEach(item -> {
+                            Recommend recommend = new Recommend();
+                            recommend.setAreaId(item.getKey());
+                            recommend.setTimes(item.getValue());
+                            recommend.setUserId(user.getId());
+                            //  写入
+                            recommendService.insertSelective(recommend);
+                        });
+
+                } else {
+                    if (maps.size() > 0){
+                        ArrayList<Recommend> newRecommend = Utils.getMaxList(recommends, maps, user);
+
+                        System.out.println("荒漠大妈骆驼");
+                        System.out.println(newRecommend);
+
+                        newRecommend.forEach(item->{
+                            if (item.getId()==null){
+                                recommendService.insertSelective(item);
+                            }else {
+                                recommendService.updateByPrimaryKeySelective(item);
+                            }
+                        });
+                    }
+                }
+            }
+
             session.removeAttribute(Constants.USER_SESSION);
             return "ok";
+
         }
         return "err";
     }
@@ -65,7 +125,7 @@ public class LoginSignController {
         //获取默认头像的真实路径
         String defaultPhoto = request.getSession().getServletContext().getRealPath("/upload/logo.jpg");
 
-        User user = new User(account, password, username, phone,defaultPhoto);
+        User user = new User(account, password, username, phone, defaultPhoto);
         System.out.println(user);
         int insert = service.insertSelective(user);
         if (insert > 0) {
@@ -76,12 +136,12 @@ public class LoginSignController {
 
 
     @PostMapping("/uniqueVer")
-    public String uniqueVerification (HttpServletRequest request){
+    public String uniqueVerification(HttpServletRequest request) {
         String account = request.getParameter("account");
         User user = service.selectByAccount(account);
-        if (user==null){
+        if (user == null) {
             return "ok";
-        }else {
+        } else {
             return "err";
         }
     }

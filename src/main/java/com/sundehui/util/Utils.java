@@ -2,6 +2,8 @@ package com.sundehui.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.sundehui.domain.Recommend;
+import com.sundehui.domain.User;
 import com.sundehui.domain.help.FilterParams;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -174,6 +176,37 @@ public class Utils {
         }
 
         return builder.toString();
+    }
+
+    // 从数据库查找到的和内存中有的找出三个最多的访问次数
+    public static ArrayList<Recommend> getMaxList(List<Recommend> recommends, ArrayList<Map.Entry<Integer, Integer>> maps, User user) {
+
+        ArrayList<Recommend> newRecommend = new ArrayList<>();
+        ArrayList<Map.Entry<Integer, Integer>> dels = new ArrayList<>();
+
+        for (int i = 0; i < recommends.size(); i++) {
+            for (int j = 0; j < maps.size(); j++) {
+                if (recommends.get(i).getAreaId().equals(maps.get(j).getKey())){
+                    // 如果数据库中已经存在相同的areaId则增加其访问次数
+                    recommends.get(i).setTimes(recommends.get(i).getTimes()+maps.get(j).getValue());
+                    dels.add(maps.get(j));
+                }
+            }
+        }
+        // 把数据库中已经存在的areaId删除
+        maps.removeAll(dels);
+
+        maps.forEach(item->{
+            Recommend recommend = new Recommend();
+            recommend.setUserId(user.getId());
+            recommend.setTimes(item.getValue());
+            recommend.setAreaId(item.getKey());
+            newRecommend.add(recommend);
+        });
+
+        newRecommend.addAll(recommends);
+
+        return newRecommend;
 
     }
 }

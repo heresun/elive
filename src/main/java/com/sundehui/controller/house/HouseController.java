@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +40,9 @@ public class HouseController {
     @Autowired
     private HouseProveService houseProveService;
 
+    @Autowired
+    private RecommendService recommendService;
+
     // 根据房屋id获取房屋的全部信息
     @GetMapping(value = "/getOne", produces = "text/html;charset=UTF-8")
     public String findOne(HttpServletRequest request) {
@@ -50,6 +54,21 @@ public class HouseController {
         }
 
         House houseSale = service.selectByPrimaryKey(id);
+
+        HttpSession session = request.getSession(false);
+        // 在登录后,每一次请求房屋的详细信息,将该房屋所属的城市对应的访问次数 +1
+        if (session != null) {
+            Map<Integer, Integer> map = (Map<Integer, Integer>) session.getAttribute(Constants.ACCESS_LOG);
+            if (map != null) {
+                Integer times = map.get(houseSale.getAreaId());
+                if (times == null) {
+                    map.put(houseSale.getAreaId(), 1);
+                } else {
+                    times++;
+                    map.put(houseSale.getAreaId(), times);
+                }
+            }
+        }
 
         if (houseSale == null) {
             return "err";
@@ -135,11 +154,7 @@ public class HouseController {
         List<House> housePage = service.getHousePage(paramMap);
         int houseCount = service.getHouseCount(paramMap);
 
-        if (housePage == null || housePage.size() <= 0) {
-            return null;
-        }
 
-        System.out.println(housePage);
         // 迭代，将房屋图片的真实路径替换为url
         housePage.forEach(item -> {
             if (item != null) {
@@ -291,16 +306,16 @@ public class HouseController {
         }
 
         HttpSession session = request.getSession(false);
-        if (session==null){
+        if (session == null) {
             return "err";
         }
         List<String> fileNames = (List<String>) session.getAttribute(Constants.FILE_NAMES);
-        if (fileNames == null){
+        if (fileNames == null) {
             return "err";
         }
         HouseProve houseProve = new HouseProve();
         houseProve.setHouseNumber(houseNumber);
-        fileNames.forEach(item->{
+        fileNames.forEach(item -> {
             houseProve.setUri(item);
             houseProveService.insertSelective(houseProve);
         });
@@ -310,11 +325,136 @@ public class HouseController {
 
     }
 
-    @GetMapping("/getRecommend")
-    public void getRecommend (HttpServletRequest request){
+    // 获取推荐房屋列表
+    @PostMapping("/getRecommend")
+    public Map<String, Object> getRecommend(HttpServletRequest request) {
 
-        System.out.println("==========================----+++++++");
-        String id = request.getSession().getId();
-        System.out.println(id);
+        FilterParams paramMap = Utils.filterParam(request);
+        paramMap.setType(null);
+        Integer page = paramMap.getPage();
+
+        HttpSession session = request.getSession(false);
+        if (session == null) { // 如果还未登录，则从数据库中选取当前城市收藏数最高的几个房源
+
+            List<House> recommendHouses = service.getMostCollectedHouses(paramMap);
+            Integer count = service.getMostCollectedCount(paramMap);
+
+            HashMap<String, Object> res = new HashMap<>();
+            res.put("housePage", recommendHouses);
+            res.put("houseCount", count);
+            return res;
+
+        } else {
+            User user = (User) session.getAttribute(Constants.USER_SESSION);
+
+            if (user == null) {//如果还未登录，则从数据库中选取当前城市收藏数最高的几个房源
+                List<House> housePage = service.getMostCollectedHouses(paramMap);
+                Integer count = service.getMostCollectedCount(paramMap);
+                housePage.forEach(item -> {
+                    if (item != null) {
+                        if (item.getUrl() != null && item.getUrl().length() != 0) {
+                            String imgUrl = ImgUtil.realPathToUrl(request, item.getUrl());
+                            item.setUrl(imgUrl);
+                        }
+                    }
+                });
+                HashMap<String, Object> res = new HashMap<>();
+                res.put("housePage", housePage);
+                res.put("houseCount", count);
+                return res;
+
+            } else {// 如果已经登录,则从数据库中找到其访问次数最多的一个几个城市id
+                Integer uId = user.getId();
+                List<Recommend> all = recommendService.getAll(uId);
+
+                if (all.size() <= 0) {
+                    List<House> housePage = service.getMostCollectedHouses(paramMap);
+                    Integer count = service.getMostCollectedCount(paramMap);
+                    housePage.forEach(item -> {
+                        if (item != null) {
+                            if (item.getUrl() != null && item.getUrl().length() != 0) {
+                                String imgUrl = ImgUtil.realPathToUrl(request, item.getUrl());
+                                item.setUrl(imgUrl);
+                            }
+                        }
+                    });
+                    HashMap<String, Object> res = new HashMap<>();
+                    res.put("housePage", housePage);
+                    res.put("houseCount", count);
+                    return res;
+                } else {
+
+                    List<House> houses = new ArrayList<>();
+                    Integer count = 0;
+                    HashMap<String, Object> res = new HashMap<>();
+                    all.sort((item1, item2) -> item2.getTimes() - item1.getTimes());
+
+                    try {
+                        Recommend recommend_1 = all.get(0);
+                        Integer areaId_1 = recommend_1.getAreaId();
+                        paramMap.setAreaId(areaId_1);
+                        houses.addAll(service.getHousePage(paramMap));
+                        count = service.getHouseCount(paramMap);
+
+                        if (houses.size() < 10) {
+                            Integer pageOne = Integer.parseInt(String.valueOf(session.getAttribute(Constants.PAGE_ONE)));
+                            paramMap.setPage(pageOne);
+                            Recommend recommend_2 = all.get(1);
+                            Integer areaId_2 = recommend_2.getAreaId();
+                            paramMap.setAreaId(areaId_2);
+                            paramMap.setPage(page);
+                            houses.addAll(service.getHousePage(paramMap));
+                            count += service.getHouseCount(paramMap);
+                            pageOne++;
+                            session.setAttribute(Constants.PAGE_ONE,pageOne);
+
+                            if (houses.size() < 10) {
+                                Integer pageTwo = Integer.parseInt(String.valueOf(session.getAttribute(Constants.PAGE_TWO)));
+                                paramMap.setPage(pageTwo);
+                                Recommend recommend_3 = all.get(2);
+                                Integer areaId_3 = recommend_3.getAreaId();
+                                paramMap.setAreaId(areaId_3);
+                                paramMap.setPage(page);
+                                houses.addAll(service.getHousePage(paramMap));
+                                count += service.getHouseCount(paramMap);
+                                pageTwo++;
+                                session.setAttribute(Constants.PAGE_TWO,pageTwo);
+                            }
+
+                        }
+
+                        if (houses.size()<10 && page==1){
+                            paramMap.setAreaId(null);
+                            houses = service.getHousePage(paramMap);
+                        }
+                    }catch (IndexOutOfBoundsException e){
+                        System.out.println("数组越界");
+                    }finally {
+
+                        // 迭代，将房屋图片的真实路径替换为url
+                        houses.forEach(item -> {
+                            if (item != null) {
+                                if (item.getUrl() != null && item.getUrl().length() != 0) {
+                                    String imgUrl = ImgUtil.realPathToUrl(request, item.getUrl());
+                                    item.setUrl(imgUrl);
+                                }
+                            }
+                        });
+
+                        if (houses.size() > 10) {
+                            res.put("housePage", houses.subList(0, 10));
+                            res.put("houseCount", count);
+                            return res;
+                        } else {
+                            res.put("housePage", houses);
+                            res.put("houseCount", count);
+                            return res;
+                        }
+                    }
+
+
+                }
+            }
+        }
     }
 }

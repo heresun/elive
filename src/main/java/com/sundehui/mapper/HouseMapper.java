@@ -73,4 +73,8 @@ public interface HouseMapper {
     Integer selectTransAnalysisData(@Param("areaId") Integer areaId,@Param("preDate") String preDate);
 
     Integer selectHouseAnalysisData(@Param("areaId") Integer areaId);
+
+    List<House> getMostCollectedHouses(@Param("params")FilterParams params);
+
+    Integer getMostCollectedCount(@Param("params") FilterParams params);
 }

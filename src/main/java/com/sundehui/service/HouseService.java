@@ -56,4 +56,8 @@ public interface HouseService {
     int changeStatus(Integer id);
 
     int changeExamineTypeByOwnerId(Integer uId);
+
+
+    List<House> getMostCollectedHouses(FilterParams params);
+    Integer getMostCollectedCount(FilterParams params);
 }

@@ -38,6 +38,399 @@
     orientation, water_type, natural_gas, parking_lot, heating_type, house_number, renovation_type,status
   </sql>
 
+    <!--    获取某个城市中收藏次数从高到底的房源-->
+    <select id="getMostCollectedHouses" parameterType="com.sundehui.domain.help.FilterParams" resultMap="BaseResultMap">
+        SELECT h.* FROM collection c
+        LEFT JOIN house h
+        ON c.house_id = h.id
+        WHERE h.id is not null
+
+
+        <if test="params.address!=null and params.address.length() > 0 ">
+            and h.address like #{params.address}
+        </if>
+        <!-- 按照新旧房屋的类型筛选  -->
+        <if test="params.type!=null">
+            and h.type=#{params.type}
+        </if>
+        <!-- 按照省市区筛选  -->
+        <if test="params.provinceId!=null">
+            and h.province_id=#{params.provinceId}
+        </if>
+        <if test="params.cityId!=null">
+            and h.city_id=#{params.cityId}
+
+        </if>
+        <if test="params.areaId!=null">
+            and h.area_id=#{params.areaId}
+
+        </if>
+        <!-- 通过审核的房屋才能被展示  -->
+        and h.examine_type = 2
+        <!--价格筛选-->
+        <if test="params.price_1!=null or params.price_2!=null or params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null">
+            and(
+        </if>
+        <if test="params.price_1!=null">
+            h.price between #{params.price_1[0]} and #{params.price_1[1]}
+        </if>
+        <if test="params.price_1!=null and (params.price_2!=null or params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_2!=null">
+            h.price between #{params.price_2[0]} and #{params.price_2[1]}
+        </if>
+        <if test="params.price_2!=null and (params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_3!=null">
+            h.price between #{params.price_3[0]} and #{params.price_3[1]}
+        </if>
+        <if test="params.price_3!=null and (params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_4!=null">
+            h.price between #{params.price_4[0]} and #{params.price_4[1]}
+        </if>
+        <if test="params.price_4!=null and (params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_5!=null">
+            h.price between #{params.price_5[0]} and #{params.price_5[1]}
+        </if>
+        <if test="params.price_5!=null and (params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_6!=null">
+            h.price between #{params.price_6[0]} and #{params.price_6[1]}
+        </if>
+        <if test="params.price_6!=null and (params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_7!=null">
+            h.price between #{params.price_7[0]} and #{params.price_7[1]}
+        </if>
+        <if test="params.price_7!=null and params.price_8!=null">
+            or
+        </if>
+        <if test="params.price_8!=null">
+            h.price between #{params.price_8[0]} and #{params.price_8[1]}
+        </if>
+
+        <if test="params.price_1!=null or params.price_2!=null or params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null">
+            )
+        </if>
+
+        <!--面积筛选-->
+        <if test="params.square_1!=null or params.square_2!=null or params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null">
+            and(
+        </if>
+        <if test="params.square_1!=null">
+            h.area_size between #{params.square_1[0]} and #{params.square_1[1]}
+        </if>
+        <if test="params.square_1!=null and (params.square_2!=null or params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_2!=null">
+            h.area_size between #{params.square_2[0]} and #{params.square_2[1]}
+        </if>
+        <if test="params.square_2!=null and (params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_3!=null">
+            h.area_size between #{params.square_3[0]} and #{params.square_3[1]}
+        </if>
+        <if test="params.square_3!=null and (params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_4!=null">
+            h.area_size between #{params.square_4[0]} and #{params.square_4[1]}
+        </if>
+        <if test="params.square_4!=null and (params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_5!=null">
+            h.area_size between #{params.square_5[0]} and #{params.square_5[1]}
+        </if>
+        <if test="params.square_5!=null and (params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_6!=null">
+            h.area_size between #{params.square_6[0]} and #{params.square_6[1]}
+        </if>
+        <if test="params.square_6!=null and params.square_7!=null">
+            or
+        </if>
+        <if test="params.square_7!=null">
+            h.area_size between #{params.square_7[0]} and #{params.square_7[1]}
+        </if>
+
+        <if test="params.square_1!=null or params.square_2!=null or params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null">
+            )
+        </if>
+
+        <!-- 按照房屋的朝向筛选  -->
+        <if test="params.orien_1 != null or params.orien_2 != null or params.orien_3 != null or params.orien_4 != null">
+            and(
+        </if>
+        <if test="params.orien_1 != null">
+            h.orientation = #{params.orien_1}
+        </if>
+        <if test="params.orien_1 != null and (params.orien_2 != null or params.orien_3 != null or params.orien_4 != null)">
+            or
+        </if>
+        <if test="params.orien_2 != null">
+            h.orientation = #{params.orien_2}
+        </if>
+        <if test="params.orien_2 != null and (params.orien_3 != null or params.orien_4 != null)">
+            or
+        </if>
+        <if test="params.orien_3 != null">
+            h.orientation = #{params.orien_3}
+        </if>
+        <if test="params.orien_3 != null and params.orien_4 != null">
+            or
+        </if>
+        <if test="params.orien_4 != null">
+            h.orientation = #{params.orien_4}
+        </if>
+        <if test="params.orien_1 != null or params.orien_2 != null or params.orien_3 != null or params.orien_4 != null">
+            )
+        </if>
+        <!-- 按照房屋的楼层筛选  -->
+        <if test="params.level_1 != null or params.level_2 != null or params.level_3 != null">
+            and(
+        </if>
+        <if test="params.level_1 != null">
+            h.level between #{params.level_1[0]} and #{params.level_1[1]}
+        </if>
+        <if test="params.level_1 != null and (params.level_2 != null or params.level_3 != null)">
+            or
+        </if>
+        <if test="params.level_2 != null">
+            h.level between #{params.level_2[0]} and #{params.level_2[1]}
+        </if>
+        <if test="params.level_2 != null and params.level_3 != null">
+            or
+        </if>
+        <if test="params.level_3 != null">
+            h.level between #{params.level_3[0]} and #{params.level_3[1]}
+        </if>
+        <if test="params.level_1 != null or params.level_2 != null or params.level_3 != null">
+            )
+        </if>
+        <if test="params.heatingType!=null">
+            and h.heating_type= #{params.heatingType}
+        </if>
+        <if test="params.parkLot!=null">
+            and h.parking_lot = #{params.parkLot}
+        </if>
+<!--count(c.house_id)-->
+        GROUP BY c.house_id
+
+        <if test="params.flag != null and params.flag==1 ">
+            order by  h.pub_date DESC
+        </if>
+
+        <if test="params.flag != null and params.flag == 2">
+            order by  h.price
+        </if>
+        <if test="params.flag != null and params.flag == 3">
+            order by  h.area_size
+        </if>
+        <if test="params.page!=null and params.count!=null">
+            limit #{params.page},#{params.count}
+        </if>
+    </select>
+    <select id="getMostCollectedCount" resultType="java.lang.Integer" parameterType="Map">
+        SELECT count(DISTINCT h.id) FROM collection c
+        LEFT JOIN house h
+        ON c.house_id = h.id
+        WHERE h.id is not null
+
+        <if test="params.address!=null and params.address.length() > 0 ">
+            and h.address like #{params.address}
+        </if>
+        <!-- 按照新旧房屋的类型筛选  -->
+        <if test="params.type!=null">
+            and h.type=#{params.type}
+        </if>
+        <!-- 按照省市区筛选  -->
+        <if test="params.provinceId!=null">
+            and h.province_id=#{params.provinceId}
+        </if>
+        <if test="params.cityId!=null">
+            and h.city_id=#{params.cityId}
+
+        </if>
+        <if test="params.areaId!=null">
+            and h.area_id=#{params.areaId}
+
+        </if>
+        <!-- 通过审核的房屋才能被展示  -->
+        and h.examine_type = 2
+        <!--价格筛选-->
+        <if test="params.price_1!=null or params.price_2!=null or params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null">
+            and(
+        </if>
+        <if test="params.price_1!=null">
+            h.price between #{params.price_1[0]} and #{params.price_1[1]}
+        </if>
+        <if test="params.price_1!=null and (params.price_2!=null or params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_2!=null">
+            h.price between #{params.price_2[0]} and #{params.price_2[1]}
+        </if>
+        <if test="params.price_2!=null and (params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_3!=null">
+            h.price between #{params.price_3[0]} and #{params.price_3[1]}
+        </if>
+        <if test="params.price_3!=null and (params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_4!=null">
+            h.price between #{params.price_4[0]} and #{params.price_4[1]}
+        </if>
+        <if test="params.price_4!=null and (params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_5!=null">
+            h.price between #{params.price_5[0]} and #{params.price_5[1]}
+        </if>
+        <if test="params.price_5!=null and (params.price_6!=null or params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_6!=null">
+            h.price between #{params.price_6[0]} and #{params.price_6[1]}
+        </if>
+        <if test="params.price_6!=null and (params.price_7!=null or params.price_8!=null)">
+            or
+        </if>
+        <if test="params.price_7!=null">
+            h.price between #{params.price_7[0]} and #{params.price_7[1]}
+        </if>
+        <if test="params.price_7!=null and params.price_8!=null">
+            or
+        </if>
+        <if test="params.price_8!=null">
+            h.price between #{params.price_8[0]} and #{params.price_8[1]}
+        </if>
+
+        <if test="params.price_1!=null or params.price_2!=null or params.price_3!=null or params.price_4!=null or params.price_5!=null or params.price_6!=null or params.price_7!=null or params.price_8!=null">
+            )
+        </if>
+
+        <!--面积筛选-->
+        <if test="params.square_1!=null or params.square_2!=null or params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null">
+            and(
+        </if>
+        <if test="params.square_1!=null">
+            h.area_size between #{params.square_1[0]} and #{params.square_1[1]}
+        </if>
+        <if test="params.square_1!=null and (params.square_2!=null or params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_2!=null">
+            h.area_size between #{params.square_2[0]} and #{params.square_2[1]}
+        </if>
+        <if test="params.square_2!=null and (params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_3!=null">
+            h.area_size between #{params.square_3[0]} and #{params.square_3[1]}
+        </if>
+        <if test="params.square_3!=null and (params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_4!=null">
+            h.area_size between #{params.square_4[0]} and #{params.square_4[1]}
+        </if>
+        <if test="params.square_4!=null and (params.square_5!=null or params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_5!=null">
+            h.area_size between #{params.square_5[0]} and #{params.square_5[1]}
+        </if>
+        <if test="params.square_5!=null and (params.square_6!=null or params.square_7!=null)">
+            or
+        </if>
+        <if test="params.square_6!=null">
+            h.area_size between #{params.square_6[0]} and #{params.square_6[1]}
+        </if>
+        <if test="params.square_6!=null and params.square_7!=null">
+            or
+        </if>
+        <if test="params.square_7!=null">
+            h.area_size between #{params.square_7[0]} and #{params.square_7[1]}
+        </if>
+
+        <if test="params.square_1!=null or params.square_2!=null or params.square_3!=null or params.square_4!=null or params.square_5!=null or params.square_6!=null or params.square_7!=null">
+            )
+        </if>
+
+        <!-- 按照房屋的朝向筛选  -->
+        <if test="params.orien_1 != null or params.orien_2 != null or params.orien_3 != null or params.orien_4 != null">
+            and(
+        </if>
+        <if test="params.orien_1 != null">
+            h.orientation = #{params.orien_1}
+        </if>
+        <if test="params.orien_1 != null and (params.orien_2 != null or params.orien_3 != null or params.orien_4 != null)">
+            or
+        </if>
+        <if test="params.orien_2 != null">
+            h.orientation = #{params.orien_2}
+        </if>
+        <if test="params.orien_2 != null and (params.orien_3 != null or params.orien_4 != null)">
+            or
+        </if>
+        <if test="params.orien_3 != null">
+            h.orientation = #{params.orien_3}
+        </if>
+        <if test="params.orien_3 != null and params.orien_4 != null">
+            or
+        </if>
+        <if test="params.orien_4 != null">
+            h.orientation = #{params.orien_4}
+        </if>
+        <if test="params.orien_1 != null or params.orien_2 != null or params.orien_3 != null or params.orien_4 != null">
+            )
+        </if>
+        <!-- 按照房屋的楼层筛选  -->
+        <if test="params.level_1 != null or params.level_2 != null or params.level_3 != null">
+            and(
+        </if>
+        <if test="params.level_1 != null">
+            h.level between #{params.level_1[0]} and #{params.level_1[1]}
+        </if>
+        <if test="params.level_1 != null and (params.level_2 != null or params.level_3 != null)">
+            or
+        </if>
+        <if test="params.level_2 != null">
+            h.level between #{params.level_2[0]} and #{params.level_2[1]}
+        </if>
+        <if test="params.level_2 != null and params.level_3 != null">
+            or
+        </if>
+        <if test="params.level_3 != null">
+            h.level between #{params.level_3[0]} and #{params.level_3[1]}
+        </if>
+        <if test="params.level_1 != null or params.level_2 != null or params.level_3 != null">
+            )
+        </if>
+        <if test="params.heatingType!=null">
+            and h.heating_type = #{params.heatingType}
+        </if>
+        <if test="params.parkLot!=null">
+            and h.parking_lot = #{params.parkLot}
+        </if>
+
+    </select>
+
+
     <select id="selectHouseAnalysisData" parameterType="java.lang.Integer" resultType="java.lang.Integer">
         select count(*) from house where area_id = #{areaId} and examine_type = 3
     </select>
@@ -48,7 +441,7 @@
         WHERE h.area_id=#{areaId} and year(t.date) = year(#{preDate}) and month(t.date) = month(#{preDate})
     </select>
 
-<!--    // 改变房屋的处理状态-->
+    <!--    // 改变房屋的处理状态-->
     <update id="changeStatus" parameterType="java.lang.String">
         update house set status = 1 where house_number = #{houseNumber};
     </update>
@@ -72,7 +465,7 @@
         select * from house
         where
         <if test="address != null">
-             address like #{address} and
+            address like #{address} and
         </if>
         examine_type = #{examineType}
         <if test="provinceId !=null">
@@ -160,21 +553,17 @@
         </if>
         <!-- 按照新旧房屋的类型筛选  -->
         <if test="params.type!=null">
-            `type`=#{params.type}
-            and
+            `type`=#{params.type} and
         </if>
         <!-- 按照省市区筛选  -->
         <if test="params.provinceId!=null">
-            `province_id`=#{params.provinceId}
-            and
+            `province_id`=#{params.provinceId} and
         </if>
         <if test="params.cityId!=null">
-            `city_id`=#{params.cityId}
-            and
+            `city_id`=#{params.cityId} and
         </if>
         <if test="params.areaId!=null">
-            `area_id`=#{params.areaId}
-            and
+            `area_id`=#{params.areaId} and
         </if>
         <!-- 通过审核的房屋才能被展示  -->
         examine_type = 2
@@ -400,13 +789,7 @@
 
     <!--  获取数量-->
     <select id="getHouseCount" resultType="java.lang.Integer" parameterType="Map">
-        <!--        select count(*)-->
-        <!--        from house-->
-        <!--        where-->
-        <!--        <if test="type!=null">-->
-        <!--            `type` = #{type}-->
-        <!--        </if>-->
-        <!--        and examine_type=2;-->
+
         select count(*) from house where
         <!--这里是搜索框的模糊查询-->
         <if test="params.address!=null and params.address.length() > 0 ">

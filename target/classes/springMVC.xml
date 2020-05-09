@@ -48,8 +48,10 @@
             <mvc:exclude-mapping path="/house/getOne.do"/>
             <mvc:exclude-mapping path="/house/housePage.do"/>
             <mvc:exclude-mapping path="/house/houseCount.do"/>
+            <mvc:exclude-mapping path="/house/getRecommend.do"/>
             <mvc:exclude-mapping path="/user/login.do"/>
             <mvc:exclude-mapping path="/user/sign.do"/>
+            <mvc:exclude-mapping path="/user/uniqueVer.do"/>
             <bean class="com.sundehui.interceptor.ResourceInterceptor"></bean>
         </mvc:interceptor>
         <!--管理元资源拦截-->

@@ -128,6 +128,10 @@ public class HouseServiceImpl implements HouseService {
     @Override
     public List<House> getHousePage(FilterParams param) {
 
+        System.out.println("page============================------s笋丁黑i是实打实的发的");
+        System.out.println("----->"+param);
+
+
         // 将address改为模糊查询参数
         String address = param.getAddress();
         if (address != null && address.length() > 0) {
@@ -140,9 +144,13 @@ public class HouseServiceImpl implements HouseService {
         if (paramPage != null && paramCount != null) {
             Integer from = (paramPage - 1) * paramCount;
             param.setPage(from);
+        }else {
+            param.setPage(0);
+            param.setCount(10);
         }
 
         List<House> housePage = mapper.getHousePage(param);
+
         // 获取房屋的图片uri
         if (housePage != null && housePage.size() > 0) {
             housePage.forEach(item -> {
@@ -156,59 +164,6 @@ public class HouseServiceImpl implements HouseService {
 
         return housePage;
     }
-
-//    @Override
-//    public List<House> getHousePage(Integer page, Integer count, Integer type, Integer flag) {
-//        Integer from = (page-1)*count;
-//        List<House> housePage =  null;
-//
-//        switch (flag){
-//            case 0:
-//                housePage = mapper.getHousePage(from, count, type);
-//                break;
-//            case 1:// 按最新发布排序
-//                housePage = mapper.getHousePageNewest(from, count, type);
-//                housePage.sort((item1, item2)->
-//                        (int) (item2.getPubDate().getTime() - item1.getPubDate().getTime()));
-//                break;
-//            case 2: // 按价格升序排列
-//                housePage = mapper.getHousePageByPriceAsce(from, count, type);
-//                housePage.sort((item1, item2)->
-//                        (int) (item1.getPrice() - item2.getPrice()));
-//                break;
-//            case 3: // 按面积升序排列
-//                housePage = mapper.getHousePageByAreaSizeAsce(from, count, type);
-//                housePage.sort((item1, item2)->
-//                        (int) (item1.getAreaSize() - item2.getAreaSize()));
-//                break;
-//            default:
-//                housePage = mapper.getHousePage(from, count, type);
-//                break;
-//
-//        }
-//
-//
-//        if (housePage!=null && housePage.size()>0){
-//            housePage.forEach(item->{
-//                List<Image> images = imageMapper.selectByHouseNumber(item.getHouseNumber());
-//                if (images!=null && images.size()>0){
-//                    String uri = images.get(0).getUri();
-//                    item.setUrl(uri);
-//                }
-//            });
-//        }
-//
-//
-//        return housePage;
-//    }
-
-//    @Override
-//    public int getHouseCount(Integer type) {
-//
-//        int houseCount = mapper.getHouseCount(type);
-//
-//        return houseCount;
-//    }
 
 
     @Override
@@ -291,5 +246,42 @@ public class HouseServiceImpl implements HouseService {
         int resCount = mapper.changeExamineTypeByOwnerId(uId);
 
         return resCount;
+    }
+
+    @Override
+    public List<House> getMostCollectedHouses(FilterParams param) {
+        // 将address改为模糊查询参数
+        String address = param.getAddress();
+        if (address != null && address.length() > 0) {
+            String addressLikeStr = String.format("%s%s%s", "%", address, "%");
+            param.setAddress(addressLikeStr);
+        }
+
+        Integer paramPage = param.getPage();
+        Integer paramCount = param.getCount();
+        if (paramPage != null && paramCount != null) {
+            Integer from = (paramPage - 1) * paramCount;
+            param.setPage(from);
+        }
+
+        List<House> housePage = mapper.getMostCollectedHouses(param);
+        // 获取房屋的图片uri
+        if (housePage != null && housePage.size() > 0) {
+            housePage.forEach(item -> {
+                List<Image> images = imageMapper.selectByHouseNumber(item.getHouseNumber());
+                if (images != null && images.size() > 0) {
+                    String uri = images.get(0).getUri();
+                    item.setUrl(uri);
+                }
+            });
+        }
+
+        return housePage;
+    }
+
+    @Override
+    public Integer getMostCollectedCount(FilterParams params) {
+        Integer count = mapper.getMostCollectedCount(params);
+        return count;
     }
 }

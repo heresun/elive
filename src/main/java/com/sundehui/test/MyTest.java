@@ -43,6 +43,8 @@ public class MyTest {
         User user2 = JSON.parseObject(string, User.class);
         System.out.println(user1);
 
+        String a = "aa";
+
     }
 
     @Test

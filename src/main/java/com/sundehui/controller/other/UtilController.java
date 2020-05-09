@@ -6,7 +6,11 @@ import com.sundehui.domain.User;
 import com.sundehui.service.UserService;
 import com.sundehui.util.Constants;
 import com.sundehui.util.ImgUtil;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -223,5 +227,20 @@ public class UtilController {
             return "ok";
         }
         return "err";
+    }
+    
+    @GetMapping("/getContract")
+    public  ResponseEntity<byte[]> getContract(){
+        //获取文件对象
+        try {
+            byte[] bytes = FileUtils.readFileToByteArray(new File("E:\\java\\elive\\target\\elive\\upload\\contract.docx"));
+            HttpHeaders headers=new HttpHeaders();
+            headers.set("Content-Disposition","attachment;filename=contract.docx");
+            ResponseEntity<byte[]> entity=new ResponseEntity<>(bytes,headers, HttpStatus.OK);
+            return entity;
+        } catch (IOException e) {
+            System.out.println("下载出错");
+            return null;
+        }
     }
 }
