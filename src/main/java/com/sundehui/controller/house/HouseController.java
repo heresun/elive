@@ -423,7 +423,7 @@ public class HouseController {
 
                         }
 
-                        if (houses.size()<10 && page==1){
+                        if (houses.size()<4 && page==1){
                             paramMap.setAreaId(null);
                             houses = service.getHousePage(paramMap);
                         }

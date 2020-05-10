@@ -17,7 +17,7 @@ public class HouseProveController {
     private HouseProveService service;
 
     @GetMapping("/getAll")
-    private String getAllHouseProve(HttpServletRequest request) {
+    public String getAllHouseProve(HttpServletRequest request) {
         String houseNumber = request.getParameter("houseNumber");
         if (houseNumber == null) {
             return "err";
@@ -31,7 +31,7 @@ public class HouseProveController {
     }
 
     @GetMapping("/deleteOne")
-    private int deleteOne(HttpServletRequest request) {
+    public int deleteOne(HttpServletRequest request) {
         String imageName = request.getParameter("imageName");
         String houseNumber = request.getParameter("houseNumber");
         if (imageName == null || houseNumber == null) {
