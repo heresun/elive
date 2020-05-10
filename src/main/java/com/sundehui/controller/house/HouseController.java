@@ -336,11 +336,16 @@ public class HouseController {
         HttpSession session = request.getSession(false);
         if (session == null) { // 如果还未登录，则从数据库中选取当前城市收藏数最高的几个房源
 
-            List<House> recommendHouses = service.getMostCollectedHouses(paramMap);
+            List<House> houses = service.getMostCollectedHouses(paramMap);
             Integer count = service.getMostCollectedCount(paramMap);
 
+            if (houses.size()<4 && page==1){
+                paramMap.setAreaId(null);
+                houses = service.getHousePage(paramMap);
+            }
+
             HashMap<String, Object> res = new HashMap<>();
-            res.put("housePage", recommendHouses);
+            res.put("housePage", houses);
             res.put("houseCount", count);
             return res;
 
@@ -358,6 +363,12 @@ public class HouseController {
                         }
                     }
                 });
+
+                if (housePage.size()<4 && page==1){
+                    paramMap.setAreaId(null);
+                    housePage = service.getHousePage(paramMap);
+                }
+
                 HashMap<String, Object> res = new HashMap<>();
                 res.put("housePage", housePage);
                 res.put("houseCount", count);
@@ -383,7 +394,6 @@ public class HouseController {
                     res.put("houseCount", count);
                     return res;
                 } else {
-
                     List<House> houses = new ArrayList<>();
                     Integer count = 0;
                     HashMap<String, Object> res = new HashMap<>();

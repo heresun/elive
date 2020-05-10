@@ -8,9 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="da77079f-8522-4ba3-b55d-07f5c5f08dfb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/HouseProveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/HouseProveController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/house/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sundehui/controller/house/HouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/elive/WEB-INF/classes/springMVC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/springMVC.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +362,7 @@
       <workItem from="1588834716112" duration="19891000" />
       <workItem from="1588877078364" duration="571000" />
       <workItem from="1588910297944" duration="38065000" />
-      <workItem from="1589084924119" duration="795000" />
+      <workItem from="1589084924119" duration="4321000" />
     </task>
     <task id="LOCAL-00001" summary="添加了mybatis下划线命名到驼峰命名的转换">
       <created>1583929097802</created>
@@ -463,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589025959844</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="完成管理后台的一些功能">
+      <created>1589100869090</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1589100869090</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,10 +540,10 @@
     </state>
     <state x="371" y="95" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1583229612020" />
     <state x="445" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1583930352295" />
-    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1589025955466">
+    <state x="385" y="13" key="CommitChangelistDialog2" timestamp="1589100864246">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1589025955466" />
+    <state x="385" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1589100864246" />
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1588516838422">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -665,10 +671,10 @@
     </state>
     <state x="362" y="87" width="561" height="524" key="StructurePopup/0.0.1280.689@0.0.1280.689" timestamp="1583248281314" />
     <state x="434" y="105" width="674" height="635" key="StructurePopup/0.0.1536.834@0.0.1536.834" timestamp="1588609958767" />
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1588877300493">
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2" timestamp="1589100885059">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1588877300493" />
+    <state x="361" y="154" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1589100885059" />
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588517100765">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -701,10 +707,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="182" key="extract.method.dialog/0.0.1536.834@0.0.1536.834" timestamp="1588700357979" />
-    <state x="496" y="220" key="git4idea.merge.GitPullDialog" timestamp="1588184512579">
+    <state x="496" y="220" key="git4idea.merge.GitPullDialog" timestamp="1589100876087">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="496" y="220" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1588184512579" />
+    <state x="496" y="220" key="git4idea.merge.GitPullDialog/0.0.1536.834@0.0.1536.834" timestamp="1589100876087" />
     <state x="635" y="284" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1588666423768">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
